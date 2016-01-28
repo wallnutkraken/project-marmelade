@@ -24,7 +24,12 @@ namespace Marmalade_Global
 
             InitializeComponent();
 
-            comboBox.ItemsSource = test();
+            // set comobox.ItemsSource = IEnumerable for each combobox
+            //InitializeComboboxes();
+            
+            // ****
+            //comboBox.ItemsSource = test();
+
         }
 
         enum MyEnum
@@ -38,8 +43,36 @@ namespace Marmalade_Global
             List<MyEnum> allEnums = Enum.GetValues(typeof(MyEnum)).Cast<MyEnum>().ToList();
             return allEnums;
         }
+        /// <summary>
+        /// Calls ViewController for getting domain enums into ienumerables ???? SD / layers 
+        /// </summary>
+        private void InitializeComboboxes()
+        {
+            throw new NotImplementedException();
+        }
 
+        // textBox_GotFocus events => sets tetbox content to empty on the first click
 
+        private void name_tbx_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= name_tbx_GotFocus;
+        }
+
+        private void address_tbx_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= address_tbx_GotFocus;
+        }
+
+        private void hourlyWage_tbx_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= hourlyWage_tbx_GotFocus;
+        }
 
     }
 }
