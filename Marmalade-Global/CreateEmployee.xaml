@@ -1,0 +1,26 @@
+﻿<Window x:Class="Marmalade_Global.CreateEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Marmalade_Global"
+        mc:Ignorable="d"
+        Title="CreateEmployee" Height="300" Width="300">
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel x:Name="Labels" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Label x:Name="name_lbl" Content="Full Name" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="phoneNo_lbl" Content="Phone Number" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="address_lbl" Content="Full address" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="hourlyWage_lbl" Content="Hourly wage" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="shift_lbl" Content="Shift" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="department_lbl" Content="Department" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="marity_lbl" Content="Marital status" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+            <Label x:Name="legalId_lbl" Content="CPR number" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

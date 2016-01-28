@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,28 +10,36 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Marmalade_Global
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateEmployee.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateEmployee : Window
     {
-        public MainWindow()
+        public CreateEmployee()
         {
+
             InitializeComponent();
 
-            testmethod();
+            comboBox.ItemsSource = test();
         }
 
-        void testmethod()
+        enum MyEnum
         {
-            CreateEmployee newWindow = new CreateEmployee();
-            newWindow.Show();
+            hello,
+            bye
         }
+
+        List<MyEnum> test()
+        {
+            List<MyEnum> allEnums = Enum.GetValues(typeof(MyEnum)).Cast<MyEnum>().ToList();
+            return allEnums;
+        }
+
+
 
     }
 }
