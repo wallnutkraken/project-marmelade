@@ -8,6 +8,24 @@ namespace Marmalade_Global
 {
     class BlueCollar : IEmployee
     {
+        public BlueCollar(string name,
+            string phoneNo, string address, double hourlyWage, string personalID,
+            EmployeeEnums.Shift shift, EmployeeEnums.Department department,
+            EmployeeEnums.MaritalStatus marity)
+        {
+            Name = name;
+            PhoneNo = phoneNo;
+            Address = address;
+            HourlyWage = hourlyWage;
+            Shift = shift;
+            Department = department;
+            MaritalStatus = marity;
+            PersonalID = personalID;
+        }
+        public BlueCollar(): this("","","",0.0,"",0,0,0)
+        {
+
+        }
 
         public double HourlyWage { get; set; }
         public string Name { get; set; }

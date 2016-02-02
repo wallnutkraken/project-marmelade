@@ -8,6 +8,22 @@ namespace Marmalade_Global
 {
     class WhiteCollar : IEmployee
     {
+        public WhiteCollar(string name,
+            string phoneNo, string address, double hourlyWage, string personalID,
+            EmployeeEnums.Department department, EmployeeEnums.MaritalStatus marity)
+        {
+            Name = name;
+            PhoneNo = phoneNo;
+            Address = address;
+            HourlyWage = hourlyWage;
+            Department = department;
+            MaritalStatus = marity;
+            PersonalID = personalID;
+        }
+        public WhiteCollar(): this("","","",0.0,"",0,0)
+        {
+
+        }
         public double HourlyWage { get; set; }
         public string Name { get; set; }
         public string PhoneNo { get; set; }

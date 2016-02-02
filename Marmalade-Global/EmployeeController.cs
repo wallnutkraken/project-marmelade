@@ -19,25 +19,17 @@ namespace Marmalade_Global
         /// <param name="department">Department enum</param>
         /// <param name="marity">Marital status enum</param>
         /// <returns></returns>
-        public static BlueCollar CreateEmployee(string name, 
-            string phoneNo, string address, double hourlyWage,
+        public static BlueCollar CreateEmployee(string name,
+            string phoneNo, string address, double hourlyWage, string personalID,
             EmployeeEnums.Shift shift, EmployeeEnums.Department department,
             EmployeeEnums.MaritalStatus marity)
         {
-            BlueCollar employee = new BlueCollar();
-
-            employee.Name = name;
-            employee.PhoneNo = phoneNo;
-            employee.Address = address;
-            employee.HourlyWage = hourlyWage;
-            employee.Shift = shift;
-            employee.Department = department;
-            employee.MaritalStatus = marity;
+            BlueCollar employee = new BlueCollar(name, phoneNo, address, hourlyWage, personalID, shift, department, marity);
 
             return employee;
         }
         /// <summary>
-        /// 
+        /// Creates sales and other white collar employees
         /// </summary>
         /// <param name="name"></param>
         /// <param name="phoneNo"></param>
@@ -47,18 +39,11 @@ namespace Marmalade_Global
         /// <param name="marity">Marital status enum</param>
         /// <returns></returns>
         public static WhiteCollar CreateEmployee(string name,
-           string phoneNo, string address, double hourlyWage,
+           string phoneNo, string address, double hourlyWage, string personalID,
             EmployeeEnums.Department department,
            EmployeeEnums.MaritalStatus marity)
         {
-            WhiteCollar employee = new WhiteCollar();
-
-            employee.Name = name;
-            employee.PhoneNo = phoneNo;
-            employee.Address = address;
-            employee.HourlyWage = hourlyWage;
-            employee.Department = department;
-            employee.MaritalStatus = marity;
+            WhiteCollar employee = new WhiteCollar(name,phoneNo,address,hourlyWage,personalID,department,marity);
 
             return employee;
         }
