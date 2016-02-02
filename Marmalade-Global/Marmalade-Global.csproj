@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BlueCollar.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="EmployeeController.cs" />
+    <Compile Include="WhiteCollar.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
