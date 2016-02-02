@@ -79,6 +79,7 @@ namespace Marmalade_Global
 
         #endregion
 
+<<<<<<< HEAD
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -90,9 +91,12 @@ namespace Marmalade_Global
 
         /// <summary>
         /// Checks whether the input typed into the window is of the correct type.
+        /// Returns true if no errors were found
         /// </summary>
-        private void ConfirmInput()
+        private bool ConfirmInput()
         {
+
+            bool confirmed = false;
             //Collection all errors, so they can be displayed properly.
             List<string> errors = new List<string>();
 
@@ -195,7 +199,8 @@ namespace Marmalade_Global
             //Check if CPR starts with 6 possible digits and 4 digits follow. 
             if (txtBxs[4].Name == "legalId_tbx")
             {
-                bool Number = false;
+                bool number = false;
+            
 
                 string dd = "";
                 string mm = "";
@@ -219,7 +224,7 @@ namespace Marmalade_Global
                     }
                     else
                     {
-                        Number = false;
+                        number = false;
                     }
 
                     int.TryParse(mm, out outInt);
@@ -229,7 +234,7 @@ namespace Marmalade_Global
                     }
                     else
                     {
-                        Number = false;
+                        number = false;
                     }
 
                     int.TryParse(yy, out outInt);
@@ -238,7 +243,7 @@ namespace Marmalade_Global
                         year = outInt;
                     } else
                     {
-                        Number = false;
+                        number = false;
                     }
 
                 }
@@ -267,7 +272,7 @@ namespace Marmalade_Global
                 {
                     errors.Add("CPR has to be 10 digits long");
                 }
-                else if (tryParse == 0 || !Number)
+                else if (tryParse == 0 || !number)
                 {
                     errors.Add("CPR has to be a number");
                 }
@@ -290,6 +295,53 @@ namespace Marmalade_Global
                     error_lbl.Content += "\n" + errors[i];
                 }
             }
+
+            if(errors.Count == 0)
+            {
+                confirmed = true;
+            }
+
+            return confirmed;
+        }
+
+        private void createEmployee_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (ConfirmInput()) { 
+            string name = name_tbx.Text;
+            string phoneNo = phoneNr_tbx.Text;
+            string address = address_tbx.Text;
+            double hourlyWage = Convert.ToDouble(hourlyWage_tbx.Text);
+            string personalID = legalId_tbx.Text;
+            EmployeeEnums.Department department = (EmployeeEnums.Department)Enum.Parse(typeof(EmployeeEnums.Department), department_cbx.Text);
+
+            EmployeeEnums.MaritalStatus marital = (EmployeeEnums.MaritalStatus)Enum.Parse(typeof(EmployeeEnums.MaritalStatus), maritalStatus_cbx.Text);
+
+
+            if (!shift_cbx.Text.Equals(""))
+            {
+                EmployeeEnums.Shift shift = (EmployeeEnums.Shift)Enum.Parse(typeof(EmployeeEnums.Shift), shift_cbx.Text);
+                EmployeeController.CreateEmployee(name,
+                                phoneNo,
+                                address,
+                                hourlyWage,
+                                personalID,
+                                shift,
+                                department,
+                                marital);
+            }
+            else
+            {
+                EmployeeController.CreateEmployee(name,
+                                phoneNo,
+                                address,
+                                hourlyWage,
+                                personalID,
+                                department,
+                                marital);
+            }
+
+
+        }
         }
     }
 }
