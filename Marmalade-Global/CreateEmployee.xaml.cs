@@ -79,7 +79,6 @@ namespace Marmalade_Global
 
         #endregion
 
-<<<<<<< HEAD
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
