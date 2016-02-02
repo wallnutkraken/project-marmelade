@@ -34,5 +34,9 @@ namespace Marmalade_Global
             newWindow.Show();
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown(0);
+        }
     }
 }
