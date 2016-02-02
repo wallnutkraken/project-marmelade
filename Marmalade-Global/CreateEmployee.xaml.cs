@@ -81,7 +81,22 @@ namespace Marmalade_Global
 
         private void createEmployee_btn_Click(object sender, RoutedEventArgs e)
         {
+            string name = name_tbx.Text;
+            string phoneNo = phoneNr_tbx.Text;
+            string address = address_tbx.Text;
+            double hourlyWage = Convert.ToDouble(hourlyWage_tbx.Text);
+            EmployeeEnums.Department department = (EmployeeEnums.Department)Enum.Parse(typeof(EmployeeEnums.Department), department_cbx.Text);
+            EmployeeEnums.Shift shift = (EmployeeEnums.Shift)Enum.Parse(typeof(EmployeeEnums.Shift), shift_cbx.Text);
+            EmployeeEnums.MaritalStatus marital = (EmployeeEnums.MaritalStatus)Enum.Parse(typeof(EmployeeEnums.MaritalStatus), maritalStatus_cbx.Text);
 
+
+            EmployeeController.CreateEmployee(name,
+                phoneNo,
+                address,
+                hourlyWage,
+                shift,
+                department,
+                marital);
         }
     }
 }

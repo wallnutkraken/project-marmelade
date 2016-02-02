@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marmalade_Global"
         mc:Ignorable="d"
-        Title="CreateEmployee" Height="466.726" Width="1182.122">
+        Title="CreateEmployee" Height="466.726" Width="500.122">
     <Grid Margin="0">
         <Grid Margin="10,10,10,10" VerticalAlignment="Center" Grid.IsSharedSizeScope="True" HorizontalAlignment="Center" Height="250" Width="300">
             <Grid.RowDefinitions>
