@@ -68,6 +68,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="EmployeeEnums.cs" />
+    <Compile Include="IEmployee.cs" />
     <Compile Include="CreateEmployee.xaml.cs">
       <DependentUpon>CreateEmployee.xaml</DependentUpon>
     </Compile>
