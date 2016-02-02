@@ -76,8 +76,12 @@ namespace Marmalade_Global
             tb.Text = string.Empty;
             tb.GotFocus -= legalId_tbx_GotFocus;
         }
+
         #endregion
 
+        private void createEmployee_btn_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
     }
 }
