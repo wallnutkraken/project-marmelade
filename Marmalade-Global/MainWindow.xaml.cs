@@ -24,5 +24,16 @@ namespace Marmalade_Global
         {
             InitializeComponent();
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Ingredient one = new Ingredient("TypeOne", 50.5, 12.2);
+            Ingredient Two = new Ingredient("TypeTwo", 60.7, 15.3);
+
+            Product ProductOne = new Product(1, "ProductTypeOne", "VarietyOne", 3, "Jar", 45, 23, one,Two);
+            string test = ProductOne.ToString();
+
+            Console.WriteLine();
+        }
     }
 }
