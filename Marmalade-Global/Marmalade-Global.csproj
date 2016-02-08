@@ -65,7 +65,7 @@
     <Compile Include="Database.cs" />
     <Compile Include="EmployeeController.cs" />
     <Compile Include="WhiteCollar.cs" />
-    <Page Include="CreateEmployee.xaml">
+        <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -81,6 +81,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BlueCollar.cs" />
+    <Compile Include="EmployeeController.cs" />
     <Compile Include="EmployeeEnums.cs" />
     <Compile Include="EmployeeSchedule.xaml.cs">
       <DependentUpon>EmployeeSchedule.xaml</DependentUpon>

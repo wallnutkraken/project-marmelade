@@ -5,52 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marmalade_Global"
         mc:Ignorable="d"
+
         Title="CreateEmployee" Height="466.726" Width="500.122">
-    <Grid Margin="0">
-        <Grid Margin="10,10,10,10" VerticalAlignment="Center" Grid.IsSharedSizeScope="True" HorizontalAlignment="Center" Height="250" Width="300">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-
-            <Label x:Name="name_lbl" Content="Full Name" Grid.Column="0" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="name_tbx"  TextWrapping="Wrap" Text="Joe Doe" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Foreground="Black" GotFocus="name_tbx_GotFocus"/>
-
-            <Label x:Name="address_lbl" Content="Full Address" Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="address_tbx" TextWrapping="Wrap" Text="21st Jump Street, Odense" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="address_tbx_GotFocus"/>
-
-            <Label x:Name="phoneNr_lbx" Content="Phone Nr" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="0"/>
-            <TextBox x:Name="phoneNr_tbx" TextWrapping="Wrap" Text="+45 123 456 78" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="phoneNr_tbx_GotFocus" />
-
-            <Label x:Name="hourlyWage_lbl" Content="Hourly Wage" Grid.Column="0" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="hourlyWage_tbx" TextWrapping="Wrap" Text="100" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="hourlyWage_tbx_GotFocus"/>
-
-            <Label x:Name="shift_lbl" Content="Shift" Grid.Column="0" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="shift_cbx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0" Grid.Row="4"/>
-
-            <Label x:Name="department_lbl" Content="Department" Grid.Column="0" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="department_cbx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0" Grid.Row="5"/>
-
-            <Label x:Name="marity_lbl" Content="Marital Status" Grid.Column="0" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="maritalStatus_cbx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0" Grid.Row="6"/>
-
-            <Label x:Name="legalId_lbl" Content="CPR Nr" Grid.Column="0" Grid.Row="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-            <TextBox x:Name="legalId_tbx" TextWrapping="Wrap" Text="1234561234" Grid.Column="1" Grid.Row="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="legalId_tbx_GotFocus"/>
-
-
+    <Grid x:Name="WindowGrid">
+    <Grid x:Name="ErrorLblGrid">
+            <Label x:Name="error_lbl" Margin="0,20" Width="350" Height ="100" Foreground="Red" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            </Label>
         </Grid>
-        <Button x:Name="createEmployee_btn" Content="Register" Grid.Column="2" HorizontalAlignment="Right" Height="100" Margin="10" Grid.Row="8" VerticalAlignment="Bottom" Width="75" Click="createEmployee_btn_Click"/>
+
+
+        <Grid Margin="0" x:Name="MainGrid">
+            <Grid Margin="10,10,10,10" VerticalAlignment="Center" Grid.IsSharedSizeScope="True" HorizontalAlignment="Center" Height="250" Width="300">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="name_lbl" Content="Full Name" Grid.Column="0" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="name_tbx"  TextWrapping="Wrap" Text="Joe Doe" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Foreground="Black" GotFocus="name_tbx_GotFocus"/>
+
+                <Label x:Name="address_lbl" Content="Full Address" Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="address_tbx" TextWrapping="Wrap" Text="21st Jump Street, Odense" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="address_tbx_GotFocus"/>
+
+                <Label x:Name="phoneNr_lbx" Content="Phone Nr" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+                <TextBox x:Name="phoneNr_tbx" TextWrapping="Wrap" Text="+45 123 456 78" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="phoneNr_tbx_GotFocus" />
+
+                <Label x:Name="hourlyWage_lbl" Content="Hourly Wage" Grid.Column="0" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="hourlyWage_tbx" TextWrapping="Wrap" Text="100" Grid.Column="1" Grid.Row="3" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="hourlyWage_tbx_GotFocus"/>
+
+                <Label x:Name="shift_lbl" Content="Shift" Grid.Column="0" Grid.Row="4" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <ComboBox x:Name="shift_cbx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0" Grid.Row="4"/>
+
+                <Label x:Name="department_lbl" Content="Department" Grid.Column="0" Grid.Row="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <ComboBox x:Name="department_cbx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0" Grid.Row="5"/>
+
+                <Label x:Name="marity_lbl" Content="Marital Status" Grid.Column="0" Grid.Row="6" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <ComboBox x:Name="maritalStatus_cbx" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="0" Grid.Row="6"/>
+
+                <Label x:Name="legalId_lbl" Content="CPR Nr" Grid.Column="0" Grid.Row="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                <TextBox x:Name="legalId_tbx" TextWrapping="Wrap" Text="1234561234" Grid.Column="1" Grid.Row="7" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="legalId_tbx_GotFocus"/>
+
+
+            </Grid>
+            <Button x:Name="createEmployee_btn" Content="Register" Grid.Column="2" HorizontalAlignment="Right" Height="100" Margin="10" Grid.Row="8" VerticalAlignment="Bottom" Width="75" Click="createEmployee_btn_Click"/>
+        </Grid>
     </Grid>
 </Window>
