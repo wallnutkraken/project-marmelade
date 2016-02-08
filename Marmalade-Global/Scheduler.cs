@@ -56,10 +56,10 @@ namespace Marmalade_Global
         }
 
         
-        int howManyCyclesWeNeedToRun()
+        int howManyCyclesWeNeedToRun(ProductionLine line, ProductionCycle cycle)
         {
 
-            int thisManyCyclesWeNEedToRun = this.productionLine.Amount / productionCycle.AmountOfProducts;
+            int thisManyCyclesWeNEedToRun = line.Amount / cycle.AmountOfProducts;
 
             return thisManyCyclesWeNEedToRun;
         }
