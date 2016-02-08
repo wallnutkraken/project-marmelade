@@ -58,6 +58,8 @@
     </ApplicationDefinition>
     <Compile Include="ProductionTask.cs" />
     <Compile Include="Scheduler.cs" />
+    <Compile Include="Machine.cs" />
+    <Compile Include="MachineType.cs" />
     <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>

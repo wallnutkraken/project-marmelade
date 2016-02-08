@@ -8,7 +8,10 @@ namespace Marmalade_Global
 {
     class Machine
     {
-        public string PlaceHolder { get; set; }
+        MachineType Type { get; set; }
+        Machine()
+        {
 
+        }
     }
 }
