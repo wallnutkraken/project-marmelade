@@ -9,7 +9,7 @@
     <Grid>
         <Label x:Name="name" Content="John Marmalade" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="16" VerticalAlignment="Top"/>
         <Label x:Name="phone" HorizontalContentAlignment="Center" Content="+45 14 86 83 75" Margin="0,25,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="daySelect" ToolTip="Selects the day for which you want to see the schedule" Margin="50,80,50,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="daySelect" SelectionChanged="daySelect_SelectionChanged" ToolTip="Selects the day for which you want to see the schedule" Margin="50,80,50,0" VerticalAlignment="Top"/>
         <ScrollViewer Margin="0,107,0,0">
             <StackPanel Name="stack"/>
 
