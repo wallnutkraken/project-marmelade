@@ -56,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ProductionTask.cs" />
+    <Compile Include="Scheduler.cs" />
     <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>
