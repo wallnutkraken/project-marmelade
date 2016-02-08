@@ -60,8 +60,20 @@
     <Compile Include="Scheduler.cs" />
     <Compile Include="Machine.cs" />
     <Compile Include="MachineType.cs" />
+    <Compile Include="ProductionCycle.cs" />
+    <Compile Include="ProductionLine.cs" />
+    <Compile Include="ScheduleEntry.xaml.cs">
+      <DependentUpon>ScheduleEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlueCollar.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="EmployeeController.cs" />
     <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EmployeeSchedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -73,9 +85,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BlueCollar.cs" />
-    <Compile Include="EmployeeController.cs" />
     <Compile Include="EmployeeEnums.cs" />
+    <Compile Include="EmployeeSchedule.xaml.cs">
+      <DependentUpon>EmployeeSchedule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IEmployee.cs" />
     <Compile Include="CreateEmployee.xaml.cs">
       <DependentUpon>CreateEmployee.xaml</DependentUpon>
@@ -84,6 +97,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ScheduleEntry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
