@@ -16,9 +16,8 @@ namespace Marmalade_Global
             Duration = duration;
             MachineTypeRequired = machineTypeRequired;
         }
-        public ProductionTask():this(default(TimeSpan), (MachineType)0);
+        public ProductionTask():this(default(TimeSpan), (MachineType)0)
         {
-
         }
     }
 }
