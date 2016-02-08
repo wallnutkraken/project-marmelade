@@ -10,15 +10,15 @@ namespace Marmalade_Global
     {
         public Product Product { get; set; }
         public int Amount { get; set; }
-        public DateTime Week { get; set; }
+        public int WeekNr { get; set; }
 
-        public ProductionLine(int amount, DateTime week, Product product)
+        public ProductionLine(int amount, int weekNr, Product product)
         {
             Amount = amount;
-            Week = week;
+            WeekNr = weekNr;
             Product = product;
         }
-        public ProductionLine() : this(0, default(DateTime), null)
+        public ProductionLine() : this(0, 0, null)
         {
         }
 
