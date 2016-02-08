@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="G3Controller.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="WeeklyProduct.cs" />
+    <Page Include="Input Data.xaml"/>
     <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>
@@ -68,6 +72,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Input Data.xaml.cs">
+      <DependentUpon>Input Data.xaml</DependentUpon>
     </Compile>
     <Compile Include="BlueCollar.cs" />
     <Compile Include="EmployeeController.cs" />
@@ -82,6 +90,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
