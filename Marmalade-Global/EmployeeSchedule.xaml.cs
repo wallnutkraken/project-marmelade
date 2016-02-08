@@ -19,23 +19,44 @@ namespace Marmalade_Global
     /// </summary>
     public partial class EmployeeSchedule : Window
     {
+        int[] Days = { 1, 2, 3, 4, 5 };
+        List<ProductionTask> tasks;
         public EmployeeSchedule()
         {
             InitializeComponent();
+            daySelect.ItemsSource = Days;
+            daySelect.SelectedIndex = 0;
 
-            DateTime now = new DateTime(2016, 02, 02, 8, 0, 0);
-
-            for (int i = 0; i < 28; i++)
+            tasks = /* Some controller method to give this thing tasks */ null;
+        }
+        
+        /// <summary>
+        /// Updates the window with selected day of the week
+        /// </summary>
+        private void Update()
+        {
+            DateTime currentTime = DateTime.UtcNow;
+            /* Beginning of the day */
+            DateTime now = new DateTime(currentTime.Year, currentTime.Month, (int)daySelect.SelectedItem, 8, 0, 0);
+            /* Not sure how to actually initialize the DateTime here, so these constructor arguments probably don't */
+            /* make a whole lot of sense. */
+            if (tasks != null)
             {
-                DateTime currentTime = now.AddMinutes(15 * i);
-                ScheduleEntry entry = new ScheduleEntry();
-                entry.time.Content = currentTime.ToShortTimeString();
-                entry.description.Content = "Hello you little fuck!";
-
-                stack.Children.Add(entry);
+                foreach(ProductionTask task in tasks)
+                {
+                    /* Deal with every task passed onto the current window */
+                    ScheduleEntry entry = new ScheduleEntry();
+                    entry.SetEntry(now, task.Duration, $"Work on {task.MachineTypeRequired.ToString()}");
+                    stack.Children.Add(entry);
+                    now = entry.EndingTime();
+                }
             }
+            
         }
 
-
+        private void daySelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Update();
+        }
     }
 }
