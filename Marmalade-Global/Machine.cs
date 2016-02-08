@@ -12,7 +12,7 @@ namespace Marmalade_Global
         /// <summary>
         /// Gets the type of the machine as it was initialized.
         /// </summary>
-        MachineType Type { get { return _Type; } }
+        public MachineType Type { get { return _Type; } }
         public Machine(MachineType type)
         {
             _Type = type;

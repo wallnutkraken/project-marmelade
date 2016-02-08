@@ -8,7 +8,7 @@ namespace Marmalade_Global
 {
     class ProductionCycle
     {
-        public List<ProductionTask> AllWeeklyTasks { get; set; } = new List<ProductionTask>();
+        public List<ProductionTask> TasksRequired { get; set; } = new List<ProductionTask>();
         public int AmountOfProducts { get; set; }
         public Product ProductsProduced { get; set; }
 
@@ -17,6 +17,8 @@ namespace Marmalade_Global
         }
         public ProductionCycle(int amountOfProductsNeeded, Product product)
         {
+            AmountOfProducts = amountOfProductsNeeded;
+            ProductsProduced = product;
         }
     }
 }

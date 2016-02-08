@@ -26,6 +26,10 @@ namespace Marmalade_Global
             InitializeComponent();
 
             testmethod();
+
+            Scheduler scheduler = new Scheduler();
+            scheduler.testScheduler();
+
         }
 
         void testmethod()
