@@ -11,5 +11,15 @@ namespace Marmalade_Global
         //   Product Product;
         public int Amount { get; set; }
         public DateTime Week { get; set; }
+
+        public ProductionLine(int amount, DateTime week)
+        {
+            Amount = amount;
+            Week = week;
+        }
+        public ProductionLine():this(0,default(DateTime))
+        {
+        }
+
     }
 }

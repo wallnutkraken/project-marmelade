@@ -12,6 +12,13 @@ namespace Marmalade_Global
         private List<ProductionCycle> allProductionCycles;
         private List<Machine> allMachines;
 
+        public Scheduler()
+        {
 
+        }
+
+
+
+        ProductionLine productionLine = new ProductionLine();
     }
 }
