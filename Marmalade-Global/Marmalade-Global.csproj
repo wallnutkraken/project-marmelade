@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -59,6 +60,8 @@
     <Compile Include="Order.cs" />
     <Compile Include="WeeklyProduct.cs" />
     <Page Include="Input Data.xaml">
+    <Compile Include="WhiteCollar.cs" />
+    <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -73,6 +76,13 @@
     <Compile Include="Ingredient.cs" />
     <Compile Include="Input Data.xaml.cs">
       <DependentUpon>Input Data.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BlueCollar.cs" />
+    <Compile Include="EmployeeController.cs" />
+    <Compile Include="EmployeeEnums.cs" />
+    <Compile Include="IEmployee.cs" />
+    <Compile Include="CreateEmployee.xaml.cs">
+      <DependentUpon>CreateEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
