@@ -56,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ProductionCycle.cs" />
+    <Compile Include="ProductionLine.cs" />
     <Compile Include="ScheduleEntry.xaml.cs">
       <DependentUpon>ScheduleEntry.xaml</DependentUpon>
     </Compile>
