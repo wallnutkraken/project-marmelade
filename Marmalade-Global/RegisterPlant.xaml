@@ -1,0 +1,26 @@
+﻿<Window x:Class="Marmalade_Global.RegisterPlant"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Marmalade_Global"
+        mc:Ignorable="d"
+        Title="RegisterPlant" Height="311.78" Width="269.372">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="248" Margin="10,23,0,0" VerticalAlignment="Top" Width="241">
+            <Label x:Name="labelName" Content="Name:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="25" Width="45"/>
+            <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="66,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="labelTitle" Content="Enter Information" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="labelType" Content="Type:" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBoxType" HorizontalAlignment="Left" Height="23" Margin="66,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Label x:Name="labelProcValue" Content="Procurement Value:" HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBoxProcValue" HorizontalAlignment="Left" Height="23" Margin="132,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+            <Label x:Name="labelLifetime" Content="Lifetime:" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBoxLifetime" HorizontalAlignment="Left" Height="23" Margin="66,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="btnRegisterPlant" Content="Register" HorizontalAlignment="Left" Margin="66,207,0,-12" VerticalAlignment="Top" Width="120" Height="33" Click="btnRegisterPlant_Click"/>
+            <Label x:Name="labelScrapValue" Content="Scrap Value:" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBoxScrapValue" HorizontalAlignment="Left" Height="23" Margin="84,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
+        </Grid>
+
+    </Grid>
+</Window>
