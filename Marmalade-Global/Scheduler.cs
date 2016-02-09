@@ -60,6 +60,21 @@ namespace Marmalade_Global
             allMachines.Add(machine3);
         }
 
+        public MachineSchedule findMachineScheduleWithLowestAssignedTime()
+        {
+            TimeSpan lowestAssignedDuration = new TimeSpan(0,0,0);
+            MachineSchedule result = new MachineSchedule();
+            foreach (MachineSchedule  machineSchedule in allMachineSchedules)
+            {
+                TimeSpan assignedTime = machineSchedule.CalcTotalAssignedTime();
+                if (assignedTime <= lowestAssignedDuration)
+                {
+                    result = machineSchedule;
+                }
+            }
+            return result;
+        } 
+
         public void Run()
         {
             // scheduling for the current Week // or a given week
@@ -108,11 +123,11 @@ namespace Marmalade_Global
                 {
                     foreach (ProductionTask productionTask in item.AssignedTasks)
                     {
-                        assignedTime = assignedTime + productionTask.Duration;
-                        if (assignedTime < leastBusyMachineSchedule.AssignedTasks.)
-                        {
+                        //assignedTime = assignedTime + productionTask.Duration;
+                        //if (assignedTime < leastBusyMachineSchedule.AssignedTasks.)
+                        //{
 
-                        }
+                        //}
 
                     }
                 }

@@ -10,7 +10,6 @@ namespace Marmalade_Global
     {
         public Machine Machine { get; set; }
         public List<ProductionTask> AssignedTasks { get; set; } = new List<ProductionTask>();
-
         public int  WeekNr { get; set; }
 
         public MachineSchedule():this(null,0)
@@ -21,5 +20,18 @@ namespace Marmalade_Global
             Machine = machine;
             WeekNr = weekNr;
         }
+
+        public TimeSpan CalcTotalAssignedTime()
+        {
+            TimeSpan totalAssignedTime = new TimeSpan();
+
+            foreach (ProductionTask task in AssignedTasks)
+            {
+                totalAssignedTime = totalAssignedTime + task.Duration;
+            }
+
+            return totalAssignedTime;
+        }
+
     }
 }
