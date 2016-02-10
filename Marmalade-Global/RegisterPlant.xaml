@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Marmalade_Global"
         mc:Ignorable="d"
-        Title="RegisterPlant" Height="311.78" Width="269.372">
+        Title="RegisterPlant" Height="342.78" Width="268.372">
     <Grid>
-        <Grid HorizontalAlignment="Left" Height="248" Margin="10,23,0,0" VerticalAlignment="Top" Width="241">
+        <Grid HorizontalAlignment="Left" Height="279" Margin="10,23,0,0" VerticalAlignment="Top" Width="241">
             <Label x:Name="labelName" Content="Name:" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" Height="25" Width="45"/>
             <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="66,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
             <Label x:Name="labelTitle" Content="Enter Information" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top" Width="120"/>
@@ -17,9 +17,11 @@
             <TextBox x:Name="textBoxProcValue" HorizontalAlignment="Left" Height="23" Margin="132,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
             <Label x:Name="labelLifetime" Content="Lifetime:" HorizontalAlignment="Left" Margin="10,101,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="textBoxLifetime" HorizontalAlignment="Left" Height="23" Margin="66,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btnRegisterPlant" Content="Register" HorizontalAlignment="Left" Margin="66,207,0,-12" VerticalAlignment="Top" Width="120" Height="33" Click="btnRegisterPlant_Click"/>
+            <Button x:Name="btnRegisterPlant" Content="Register" HorizontalAlignment="Left" Margin="66,226,0,0" VerticalAlignment="Top" Width="120" Height="33" Click="btnRegisterPlant_Click"/>
             <Label x:Name="labelScrapValue" Content="Scrap Value:" HorizontalAlignment="Left" Margin="10,154,0,0" VerticalAlignment="Top"/>
             <TextBox x:Name="textBoxScrapValue" HorizontalAlignment="Left" Height="23" Margin="84,157,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="102"/>
+            <Label x:Name="labelYearsUsed" Content="Yers Used: " HorizontalAlignment="Left" Margin="17,185,0,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="textBoxYearsUsed" HorizontalAlignment="Left" Height="23" Margin="84,185,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="102"/>
         </Grid>
 
     </Grid>

@@ -43,8 +43,11 @@ namespace Marmalade_Global
             {
                 errorMessage = errorMessage + "Lifetime field is empty!\n";
             }
-            int intResult;
-            if(!int.TryParse(textBoxLifetime.Text, out intResult) && !string.IsNullOrWhiteSpace(textBoxLifetime.Text))
+            double resultLifetime;
+            double resultProcValue;
+            double resultScrapValue;
+            double resultYearsUsed;
+            if (!double.TryParse(textBoxLifetime.Text, out resultLifetime) && !string.IsNullOrWhiteSpace(textBoxLifetime.Text))
             {
                 errorMessage = errorMessage + "Lifetime should be a number!\n";
             }
@@ -52,8 +55,7 @@ namespace Marmalade_Global
             {
                 errorMessage = errorMessage + "Procurement field is empty!\n";
             }
-            double doubleResult;
-            if (!double.TryParse(textBoxProcValue.Text, out doubleResult) && !string.IsNullOrWhiteSpace(textBoxProcValue.Text))
+            if (!double.TryParse(textBoxProcValue.Text, out resultProcValue) && !string.IsNullOrWhiteSpace(textBoxProcValue.Text))
             {
                 errorMessage = errorMessage + "Procurement should be a number!\n";
             }
@@ -61,9 +63,17 @@ namespace Marmalade_Global
             {
                 errorMessage = errorMessage + "Scrap value field is empty!\n";
             }
-            if (!double.TryParse(textBoxScrapValue.Text, out doubleResult) && !string.IsNullOrWhiteSpace(textBoxScrapValue.Text))
+            if (!double.TryParse(textBoxScrapValue.Text, out resultScrapValue) && !string.IsNullOrWhiteSpace(textBoxScrapValue.Text))
             {
                 errorMessage = errorMessage + "Scrap value should be a number!\n";
+            }
+            if (string.IsNullOrWhiteSpace(textBoxYearsUsed.Text))
+            {
+                errorMessage = errorMessage + "Years used field is empty!\n";
+            }
+            if (!double.TryParse(textBoxYearsUsed.Text, out resultYearsUsed) && !string.IsNullOrWhiteSpace(textBoxYearsUsed.Text))
+            {
+                errorMessage = errorMessage + "Years used should be a number!\n";
             }
 
             if (!string.IsNullOrWhiteSpace(errorMessage))
@@ -72,7 +82,8 @@ namespace Marmalade_Global
             }
             else
             {
-                // no errors
+                // registering plant
+                PlantController.RegisterPlant(textBoxName.Text, textBoxType.Text, resultLifetime, resultProcValue, resultScrapValue, resultYearsUsed);
             }
             
         }
