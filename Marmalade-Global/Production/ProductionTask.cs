@@ -9,6 +9,9 @@ namespace Marmalade_Global
 {
     class ProductionTask : IProductionTask
     {
+        /// <summary>
+        /// Duration of the task for completion. Minimum 15 minutes.
+        /// </summary>
         public TimeSpan Duration { get; set; }
         public MachineType MachineTypeRequired { get; set; }
 
