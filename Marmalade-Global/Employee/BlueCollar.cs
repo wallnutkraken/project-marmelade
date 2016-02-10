@@ -8,6 +8,17 @@ namespace Marmalade_Global
 {
     class BlueCollar : IEmployee
     {
+        /// <summary>
+        /// Creates an employee
+        /// </summary>
+        /// <param name="name">Full name of the worker</param>
+        /// <param name="phoneNo">Mobile/Landline phone number</param>
+        /// <param name="address">Primary address</param>
+        /// <param name="hourlyWage">Hourly wage as set in contract</param>
+        /// <param name="personalID">CPR number or any other form of official identification</param>
+        /// <param name="shift">Type of shifts the employee works</param>
+        /// <param name="department">Department of the company the employee works for</param>
+        /// <param name="marity">Employees marital status</param>
         public BlueCollar(string name,
             string phoneNo, string address, double hourlyWage, string personalID,
             EmployeeStatuses.Shift shift, EmployeeStatuses.Department department,
@@ -22,7 +33,7 @@ namespace Marmalade_Global
             MaritalStatus = marity;
             PersonalID = personalID;
         }
-        public BlueCollar(): this("","","",0.0,"",0,0,0)
+        public BlueCollar() : this("", "", "", 0.0, "", 0, 0, 0)
         {
 
         }
@@ -37,24 +48,14 @@ namespace Marmalade_Global
         public EmployeeStatuses.Shift Shift { get; set; }
 
 
-    /// <summary>
-    /// saves blue collar Employee to DB...
-    /// </summary>
-    /// <param name="employee"></param>
-    public static void SaveToDB(BlueCollar employee)
-    {
-        new NotImplementedException();
+        /// <summary>
+        /// saves blue collar Employee to DB...
+        /// </summary>
+        /// <param name="employee"></param>
+        public static void SaveToDB(BlueCollar employee)
+        {
+            throw new NotImplementedException();
+        }
 
     }
-
-    /// <summary>
-    /// saves white collar Employee to DB...
-    /// </summary>
-    /// <param name="employee"></param>
-    public static void SaveToDB(WhiteCollar employee)
-    {
-        new NotImplementedException();
-    }
-
-}
 }
