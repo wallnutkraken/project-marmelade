@@ -11,7 +11,5 @@ namespace Marmalade_Global
         private List<ProductionLine> allProductionLines;
         private List<ProductionCycle> allProductionCycles;
         private List<Machine> allMachines;
-
-
     }
 }
