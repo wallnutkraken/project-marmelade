@@ -21,5 +21,26 @@ namespace Marmalade_Global
 
         ProductionLine productionLine = new ProductionLine();
         ProductionCycle productionCycle = new ProductionCycle();
+                //for (; i < length; i++)
+                //{
+
+                //}
+            }
+
+
+        }
+
+        struct ProductionCycleAmount
+        {
+            public ProductionCycle productionCycleNeeded;
+            public int amountOfProductionCyclesNeeded;
+
+            public ProductionCycleAmount(ProductionCycle pc, int amount)
+            {
+                productionCycleNeeded = pc;
+                amountOfProductionCyclesNeeded = amount;
+            }
+        }
+        
     }
 }
