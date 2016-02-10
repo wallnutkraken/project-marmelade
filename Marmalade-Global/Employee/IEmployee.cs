@@ -16,8 +16,8 @@ namespace Marmalade_Global
         string PhoneNo { get; set; }
         string Address { get; set; }
         string PersonalID { get; set; }
-        EmployeeEnums.MaritalStatus MaritalStatus { get; set; }
-        EmployeeEnums.Department Department { get; set; }
+        EmployeeStatuses.MaritalStatus MaritalStatus { get; set; }
+        EmployeeStatuses.Department Department { get; set; }
 
     }
 }

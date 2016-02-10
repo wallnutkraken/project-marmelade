@@ -39,9 +39,9 @@ namespace Marmalade_Global
         /// </summary>
         private void InitializeComboboxes()
         {
-            shift_cbx.ItemsSource = EnumToListForCombobox<EmployeeEnums.Shift>();
-            maritalStatus_cbx.ItemsSource = EnumToListForCombobox<EmployeeEnums.MaritalStatus>();
-            department_cbx.ItemsSource = EnumToListForCombobox<EmployeeEnums.Department>();
+            shift_cbx.ItemsSource = EnumToListForCombobox<EmployeeStatuses.Shift>();
+            maritalStatus_cbx.ItemsSource = EnumToListForCombobox<EmployeeStatuses.MaritalStatus>();
+            department_cbx.ItemsSource = EnumToListForCombobox<EmployeeStatuses.Department>();
         }
 
         #region GotFocus Methods
@@ -311,14 +311,14 @@ namespace Marmalade_Global
             string address = address_tbx.Text;
             double hourlyWage = Convert.ToDouble(hourlyWage_tbx.Text);
             string personalID = legalId_tbx.Text;
-            EmployeeEnums.Department department = (EmployeeEnums.Department)Enum.Parse(typeof(EmployeeEnums.Department), department_cbx.Text);
+            EmployeeStatuses.Department department = (EmployeeStatuses.Department)Enum.Parse(typeof(EmployeeStatuses.Department), department_cbx.Text);
 
-            EmployeeEnums.MaritalStatus marital = (EmployeeEnums.MaritalStatus)Enum.Parse(typeof(EmployeeEnums.MaritalStatus), maritalStatus_cbx.Text);
+            EmployeeStatuses.MaritalStatus marital = (EmployeeStatuses.MaritalStatus)Enum.Parse(typeof(EmployeeStatuses.MaritalStatus), maritalStatus_cbx.Text);
 
 
             if (!shift_cbx.Text.Equals(""))
             {
-                EmployeeEnums.Shift shift = (EmployeeEnums.Shift)Enum.Parse(typeof(EmployeeEnums.Shift), shift_cbx.Text);
+                EmployeeStatuses.Shift shift = (EmployeeStatuses.Shift)Enum.Parse(typeof(EmployeeStatuses.Shift), shift_cbx.Text);
                 EmployeeController.CreateEmployee(name,
                                 phoneNo,
                                 address,

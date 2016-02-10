@@ -10,8 +10,8 @@ namespace Marmalade_Global
     {
         public BlueCollar(string name,
             string phoneNo, string address, double hourlyWage, string personalID,
-            EmployeeEnums.Shift shift, EmployeeEnums.Department department,
-            EmployeeEnums.MaritalStatus marity)
+            EmployeeStatuses.Shift shift, EmployeeStatuses.Department department,
+            EmployeeStatuses.MaritalStatus marity)
         {
             Name = name;
             PhoneNo = phoneNo;
@@ -32,9 +32,9 @@ namespace Marmalade_Global
         public string PhoneNo { get; set; }
         public string Address { get; set; }
         public string PersonalID { get; set; }
-        public EmployeeEnums.MaritalStatus MaritalStatus { get; set; }
-        public EmployeeEnums.Department Department { get; set; }
-        public EmployeeEnums.Shift Shift { get; set; }
+        public EmployeeStatuses.MaritalStatus MaritalStatus { get; set; }
+        public EmployeeStatuses.Department Department { get; set; }
+        public EmployeeStatuses.Shift Shift { get; set; }
 
 
     /// <summary>

@@ -9,7 +9,7 @@ namespace Marmalade_Global
     /// <summary>
     /// Class that contains all enums that are related to Employee
     /// </summary>
-   class EmployeeEnums
+   class EmployeeStatuses
     {
         /// <summary>
         /// Type of the shift(Day / Evening / Night)
