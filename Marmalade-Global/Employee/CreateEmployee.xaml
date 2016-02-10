@@ -37,7 +37,7 @@
                 <TextBox x:Name="name_tbx"  TextWrapping="Wrap" Text="Joe Doe" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Foreground="Black" GotFocus="name_tbx_GotFocus"/>
 
                 <Label x:Name="address_lbl" Content="Full Address" Grid.Column="0" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-                <TextBox x:Name="address_tbx" TextWrapping="Wrap" Text="21st Jump Street, Odense" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="address_tbx_GotFocus"/>
+                <TextBox x:Name="address_tbx" TextWrapping="Wrap" Text="21st Jumpvej, Odense" Grid.Column="1" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="address_tbx_GotFocus"/>
 
                 <Label x:Name="phoneNr_lbx" Content="Phone Nr" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="2" Grid.Column="0"/>
                 <TextBox x:Name="phoneNr_tbx" TextWrapping="Wrap" Text="+45 123 456 78" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" GotFocus="phoneNr_tbx_GotFocus" />
