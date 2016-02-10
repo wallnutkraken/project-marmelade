@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Marmalade_Global.Production;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Marmalade_Global
     public partial class EmployeeSchedule : Window
     {
         int[] Days = { 1, 2, 3, 4, 5 };
-        List<ProductionTask> tasks;
+        List<IProductionTask> tasks;
         public EmployeeSchedule()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace Marmalade_Global
             /* make a whole lot of sense. */
             if (tasks != null)
             {
-                foreach(ProductionTask task in tasks)
+                foreach(IProductionTask task in tasks)
                 {
                     /* Deal with every task passed onto the current window */
                     ScheduleEntry entry = new ScheduleEntry();
