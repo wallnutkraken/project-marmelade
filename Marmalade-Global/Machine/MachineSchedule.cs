@@ -21,5 +21,8 @@ namespace Marmalade_Global
             Machine = machine;
             WeekNr = weekNr;
         }
+
+
+
     }
 }

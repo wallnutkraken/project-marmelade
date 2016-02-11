@@ -12,130 +12,45 @@ namespace Marmalade_Global
     {
         List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
         ProductionCycle pc = new ProductionCycle();
+        List<Machine> allMachines = new List<Machine>();
 
         public Scheduler()
         {
         }
 
 
-       // public List<WeeklyProduct> FindWPLs(int weekNr)
-       // {
-       //     List<WeeklyProduct> result = allWPLs.FindAll(WPL => WPL.WeekNr == weekNr);
-       //     return result;
-       // }
+        public List<WeeklyProduct> FindWPLs(int weekNr)
+        {
+            List<WeeklyProduct> result = allWPLs.FindAll(WPL => WPL.WeekNr == weekNr);
+            return result;
+        }
+
+        void test()
+        {
+            int weekNr = 0;
+
+            List<WeeklyProduct> list = FindWPLs(weekNr);
+
+            foreach (WeeklyProduct weeklyProduct in list)
+            {
+                int number = CalcNrOfIterationsForPC(pc, weeklyProduct);
+
+                for (int i = 0; i < number; i++)
+                {
+                    pc.Simulate(allMachines);
+                }
+            }
+        }
+
+        public int CalcNrOfIterationsForPC(ProductionCycle productionCycle, WeeklyProduct weeklyProduct)
+        {
+            double amountOfProducts = weeklyProduct.TotalKgAmount / (weeklyProduct.Product.Size * 100);
+            int amount = (int)amountOfProducts;
+            double result = (double)amount / (double)productionCycle.AmountOfProducts;
+            int resultInt = (int)Math.Ceiling(result);
+            return resultInt;
+        }
 
-       //void test()
-       // {
-       //     int weekNr = 0;
-
-       //     List<WeeklyProduct> list =  FindWPLs(weekNr);
-
-       //     foreach (WeeklyProduct weeklyProduct in list)
-       //     {
-       //        int number =  CalcNrOfIterationsForPC(pc);
-
-
-       //     }
-
-       // }
-
-
-       // void run()
-       // {
-       //     pc.ProductProduced;
-       //     pc.AmountOfProducts;
-       //     pc.PCLsRequired;
-
-       //     WeeklyProduct wp = new WeeklyProduct();
-       //     wp.Product;
-       //     wp.TotalKgAmount;
-
-       //     Product product = new Product();
-       //     product.
-       // }
-
-
-
-       // public int CalcNrOfIterationsForPC(ProductionCycle productionCycle, WeeklyProduct weeklyProduct)
-       // {
-       //      weeklyProduct.TotalKgAmount pc.AmountOfProducts;
-       // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public MachineSchedule findMachineScheduleWithLowestAssignedTime()
-        //{
-        //    TimeSpan lowestAssignedDuration = new TimeSpan(0,0,0);
-        //    MachineSchedule result = new MachineSchedule();
-        //    foreach (MachineSchedule  machineSchedule in allMachineSchedules)
-        //    {
-        //        TimeSpan assignedTime = machineSchedule.CalcTotalAssignedTime();
-        //        if (assignedTime <= lowestAssignedDuration)
-        //        {
-        //            result = machineSchedule;
-        //        }
-        //    }
-        //    return result;
-        //} 
 
         //public void Run()
         //{

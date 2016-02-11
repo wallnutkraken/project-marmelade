@@ -73,7 +73,6 @@
     <Compile Include="Machine\Machine.cs" />
     <Compile Include="Machine\MachineType.cs" />
     <Compile Include="Production\ProductionCycle.cs" />
-    <Compile Include="Production\ProductionLine.cs" />
     <Compile Include="ScheduleEntry.xaml.cs">
       <DependentUpon>ScheduleEntry.xaml</DependentUpon>
     </Compile>
