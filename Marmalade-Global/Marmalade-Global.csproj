@@ -56,23 +56,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Machine\CreateMachine.xaml.cs">
-      <DependentUpon>CreateMachine.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Machine\IMachine.cs" />
-    <Compile Include="Machine\MachineController.cs" />
     <Compile Include="CreateSchedule.xaml.cs">
       <DependentUpon>CreateSchedule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Machine\IMachine.cs" />
+    <Compile Include="Machine\Machine.cs" />
+    <Compile Include="Machine\MachineController.cs" />
+    <Compile Include="Machine\MachineSchedule.cs" />
+    <Compile Include="Machine\MachineScheduleWindow.xaml.cs">
+      <DependentUpon>MachineScheduleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Machine\MachineType.cs" />
     <Compile Include="Optimization\G3Controller.cs" />
     <Compile Include="Optimization\Order.cs" />
     <Compile Include="Optimization\WeeklyProduct.cs" />
     <Compile Include="UtilityController.cs" />
-    <Page Include="Machine\CreateMachine.xaml">
+    <Page Include="CreateSchedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateSchedule.xaml">
+    <Page Include="Machine\MachineScheduleWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -82,13 +85,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page> -->
-    <Compile Include="Machine\MachineSchedule.cs" />
     <Compile Include="Production\IProductionTask.cs" />
     <Compile Include="Production\ProductionCycleLine.cs" />
     <Compile Include="Production\ProductionTask.cs" />
     <Compile Include="Scheduler.cs" />
-    <Compile Include="Machine\Machine.cs" />
-    <Compile Include="Machine\MachineType.cs" />
     <Compile Include="Production\ProductionCycle.cs" />
     <Compile Include="ScheduleEntry.xaml.cs">
       <DependentUpon>ScheduleEntry.xaml</DependentUpon>
@@ -163,6 +163,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Machines\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

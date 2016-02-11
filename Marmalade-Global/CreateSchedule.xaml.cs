@@ -25,13 +25,14 @@ namespace Marmalade_Global
         {
             InitializeComponent();
 
+
+            scheduler.fillLists();
         }
 
         private void createSchedule_btn_Click(object sender, RoutedEventArgs e)
         {
             int weekNumber = 1;
 
-            scheduler.fillLists();
 
             scheduler.CreateScheduleForAllMachines(weekNumber);
         }

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Marmalade_Global.Machine;
 
 namespace Marmalade_Global
 {
@@ -38,8 +39,8 @@ namespace Marmalade_Global
             CreateSchedule newWindow1 = new CreateSchedule();
             newWindow1.Show();
 
-            Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
-            machineWindow.Show();
+            MachineScheduleWindow machineScheduleWinow = new MachineScheduleWindow();
+            machineScheduleWinow.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

@@ -1,0 +1,18 @@
+﻿<Window x:Class="Marmalade_Global.Machine.MachineScheduleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Marmalade_Global.Machine"
+        mc:Ignorable="d"
+        Title="MachineScheduleWindow" Height="300" Width="300">
+    <Grid>
+        <Label x:Name="machineName_lbl" Content="machine name" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="16" VerticalAlignment="Top"/>
+        <Label x:Name="machineType_lbl" HorizontalContentAlignment="Center" Content="machine type" Margin="0,25,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="selectedWeek_cbx" SelectionChanged="daySelect_SelectionChanged" ToolTip="Selects the week for which you want to see the schedule" Margin="50,80,50,0" VerticalAlignment="Top"/>
+        <ScrollViewer Margin="0,107,0,0">
+
+        </ScrollViewer>
+        <ComboBox x:Name="selectedMachine_cbx_"  Margin="50,51,50,0" VerticalAlignment="Top" SelectionChanged="selectedMachine_cbx__SelectionChanged"/>
+    </Grid>
+</Window>

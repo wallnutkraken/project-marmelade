@@ -27,5 +27,10 @@ namespace Marmalade_Global
         public MachineEntry() : this((MachineType)0)
         {
         }
+
+        public override string ToString()
+        {
+            return MachineId + " , " + Type;
+        }
     }
 }

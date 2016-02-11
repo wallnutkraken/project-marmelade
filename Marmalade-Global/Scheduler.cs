@@ -13,7 +13,7 @@ namespace Marmalade_Global
     {
         List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
         ProductionCycle pc = new ProductionCycle();
-        List<MachineEntry> allMachines = new List<MachineEntry>();
+         public static List<MachineEntry> allMachines = new List<MachineEntry>();
 
 
         public void fillLists()
