@@ -56,27 +56,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="MachineSchedule.cs" />
-    <Compile Include="Product.cs" />
-    <Compile Include="ProductionCycleLine.cs" />
-    <Compile Include="ProductionTask.cs" />
-    <Compile Include="Scheduler.cs" />
-    <Compile Include="Machine.cs" />
-    <Compile Include="MachineType.cs" />
-    <Compile Include="ProductionCycle.cs" />
-    <Compile Include="ProductionLine.cs" />
-    <Compile Include="ScheduleEntry.xaml.cs">
-      <DependentUpon>ScheduleEntry.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="BlueCollar.cs" />
-    <Compile Include="Database.cs" />
-    <Compile Include="EmployeeController.cs" />
-    <Compile Include="WhiteCollar.cs" />
+    <Compile Include="G3Controller.cs" />
+    <Compile Include="Order.cs" />
+    <Compile Include="WeeklyProduct.cs" />
+    <Page Include="Input Data.xaml"/>
+    <!-- <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page> -->
+    <Compile Include="Machine\MachineSchedule.cs" />
+    <Compile Include="Production\IProductionTask.cs" />
+    <Compile Include="Production\ProductionTask.cs" />
+    <Compile Include="Scheduler.cs" />
+    <Compile Include="Machine\Machine.cs" />
+    <Compile Include="Machine\MachineType.cs" />
+    <Compile Include="Production\ProductionCycle.cs" />
+    <Compile Include="Production\ProductionLine.cs" />
+    <Compile Include="ScheduleEntry.xaml.cs">
+      <DependentUpon>ScheduleEntry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\BlueCollar.cs" />
+    <Compile Include="Database.cs" />
+    <Compile Include="Employee\EmployeeController.cs" />
+    <Compile Include="Employee\WhiteCollar.cs" />
+    <Page Include="Employee\CreateEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EmployeeSchedule.xaml">
+    <Page Include="Employee\EmployeeSchedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,12 +96,16 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EmployeeEnums.cs" />
-    <Compile Include="EmployeeSchedule.xaml.cs">
+    <Compile Include="Ingredient.cs" />
+    <Compile Include="Input Data.xaml.cs">
+      <DependentUpon>Input Data.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EmployeeEnums.cs" />
+    <Compile Include="Employee\EmployeeSchedule.xaml.cs">
       <DependentUpon>EmployeeSchedule.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IEmployee.cs" />
-    <Compile Include="CreateEmployee.xaml.cs">
+    <Compile Include="Employee\IEmployee.cs" />
+    <Compile Include="Employee\CreateEmployee.xaml.cs">
       <DependentUpon>CreateEmployee.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
@@ -106,6 +118,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

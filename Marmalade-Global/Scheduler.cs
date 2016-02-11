@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Marmalade_Global;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -172,5 +173,8 @@ namespace Marmalade_Global
         //    }
         //}
 
+        ProductionLine productionLine = new ProductionLine();
+        ProductionCycle productionCycle = new ProductionCycle();
     }
 }
+
