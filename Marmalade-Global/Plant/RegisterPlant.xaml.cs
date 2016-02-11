@@ -26,22 +26,18 @@ namespace Marmalade_Global
 
         private void btnRegisterPlant_Click(object sender, RoutedEventArgs e)
         {
-            string errorMessage = "";
+            List<string> inputError = new List<string>();
             if(string.IsNullOrWhiteSpace(textBoxName.Text))
             {
-                errorMessage = errorMessage + "Name field is empty!\n";
+                inputError.Add("Name field is empty!\n");
             }
             if(string.IsNullOrWhiteSpace(textBoxType.Text))
             {
-                errorMessage = errorMessage + "Type field is empty!\n";
+                inputError.Add("Type field is empty!\n");
             }
             if (string.IsNullOrWhiteSpace(textBoxLifetime.Text))
             {
-                errorMessage = errorMessage + "Lifetime field is empty!\n";
-            }
-            if (string.IsNullOrWhiteSpace(textBoxLifetime.Text))
-            {
-                errorMessage = errorMessage + "Lifetime field is empty!\n";
+                inputError.Add("Lifetime field is empty!\n");
             }
             double resultLifetime;
             double resultProcValue;
@@ -49,35 +45,40 @@ namespace Marmalade_Global
             double resultYearsUsed;
             if (!double.TryParse(textBoxLifetime.Text, out resultLifetime) && !string.IsNullOrWhiteSpace(textBoxLifetime.Text))
             {
-                errorMessage = errorMessage + "Lifetime should be a number!\n";
+                inputError.Add("Lifetime should be a number!\n");
             }
             if (string.IsNullOrWhiteSpace(textBoxProcValue.Text))
             {
-                errorMessage = errorMessage + "Procurement field is empty!\n";
+                inputError.Add("Procurement field is empty!\n");
             }
             if (!double.TryParse(textBoxProcValue.Text, out resultProcValue) && !string.IsNullOrWhiteSpace(textBoxProcValue.Text))
             {
-                errorMessage = errorMessage + "Procurement should be a number!\n";
+                inputError.Add("Procurement should be a number!\n");
             }
             if (string.IsNullOrWhiteSpace(textBoxScrapValue.Text))
             {
-                errorMessage = errorMessage + "Scrap value field is empty!\n";
+                inputError.Add("Scrap value field is empty!\n");
             }
             if (!double.TryParse(textBoxScrapValue.Text, out resultScrapValue) && !string.IsNullOrWhiteSpace(textBoxScrapValue.Text))
             {
-                errorMessage = errorMessage + "Scrap value should be a number!\n";
+                inputError.Add("Scrap value should be a number!\n");
             }
             if (string.IsNullOrWhiteSpace(textBoxYearsUsed.Text))
             {
-                errorMessage = errorMessage + "Years used field is empty!\n";
+                inputError.Add("Years used field is empty!\n");
             }
             if (!double.TryParse(textBoxYearsUsed.Text, out resultYearsUsed) && !string.IsNullOrWhiteSpace(textBoxYearsUsed.Text))
             {
-                errorMessage = errorMessage + "Years used should be a number!\n";
+                inputError.Add("Years used should be a number!\n");
             }
 
-            if (!string.IsNullOrWhiteSpace(errorMessage))
+            if (inputError.Count > 0)
             {
+                string errorMessage = "";
+                for (int i = 0; i < inputError.Count; i++)
+                {
+                    errorMessage = errorMessage + inputError[i];
+                }
                 MessageBox.Show(errorMessage);
             }
             else
