@@ -59,6 +59,8 @@
     <Compile Include="Machine\CreateMachine.xaml.cs">
       <DependentUpon>CreateMachine.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Machine\IMachine.cs" />
+    <Compile Include="Machine\MachineController.cs" />
     <Compile Include="Optimization\G3Controller.cs" />
     <Compile Include="Optimization\Order.cs" />
     <Compile Include="Optimization\WeeklyProduct.cs" />
