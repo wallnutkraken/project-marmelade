@@ -13,7 +13,7 @@ namespace Marmalade_Global
     {
         List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
         ProductionCycle pc = new ProductionCycle();
-        List<Machine> allMachines = new List<Machine>();
+        List<MachineEntry> allMachines = new List<MachineEntry>();
 
 
         public void fillLists()
@@ -66,12 +66,12 @@ namespace Marmalade_Global
             productionTasksRequired2.Add(task04);
             productionTasksRequired2.Add(task05);
 
-            Machine tank1 = new Machine(MachineType.Tank);
-            Machine tank2 = new Machine(MachineType.Tank);
-            Machine tank3 = new Machine(MachineType.Tank);
-            Machine tank4 = new Machine(MachineType.Tank);
-            Machine tank5 = new Machine(MachineType.Tank);
-            Machine tank6 = new Machine(MachineType.Tank);
+            MachineEntry tank1 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank2 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank3 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank4 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank5 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank6 = new MachineEntry(MachineType.Tank);
 
             MachineSchedule msc1 = new MachineSchedule(tank1, 1);
             MachineSchedule msc2 = new MachineSchedule(tank2, 1);
@@ -80,10 +80,10 @@ namespace Marmalade_Global
             MachineSchedule msc5 = new MachineSchedule(tank5, 1);
             MachineSchedule msc6 = new MachineSchedule(tank6, 1);
 
-            Machine filling1 = new Machine(MachineType.Filling);
-            Machine filling2 = new Machine(MachineType.Filling);
-            Machine filling3 = new Machine(MachineType.Filling);
-            Machine filling4 = new Machine(MachineType.Filling);
+            MachineEntry filling1 = new MachineEntry(MachineType.Filling);
+            MachineEntry filling2 = new MachineEntry(MachineType.Filling);
+            MachineEntry filling3 = new MachineEntry(MachineType.Filling);
+            MachineEntry filling4 = new MachineEntry(MachineType.Filling);
 
             MachineSchedule msc01 = new MachineSchedule(filling1, 1);
             MachineSchedule msc02 = new MachineSchedule(filling2, 1);

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Marmalade_Global
 {
-    class Machine
+    class MachineEntry : IMachine
     {
         /// <summary>
         /// Gets the type of the machine as it was initialized.
@@ -20,11 +20,11 @@ namespace Marmalade_Global
         public MachineSchedule MachineSchedule { get; set; } = new MachineSchedule();
 
 
-        public Machine(MachineType type)
+        public MachineEntry(MachineType type)
         {
             Type = type;
         }
-        public Machine() : this((MachineType)0)
+        public MachineEntry() : this((MachineType)0)
         {
         }
     }

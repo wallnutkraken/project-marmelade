@@ -9,7 +9,7 @@ namespace Marmalade_Global
 {
     class MachineSchedule
     {
-        public Machine Machine { get; set; }
+        public MachineEntry Machine { get; set; }
         public List<ProductionTask> AssignedTasks { get; set; } = new List<ProductionTask>();
 
         public int  WeekNr { get; set; }
@@ -17,7 +17,7 @@ namespace Marmalade_Global
         public MachineSchedule():this(null,0)
         {
         }
-        public MachineSchedule(Machine machine,int weekNr)
+        public MachineSchedule(MachineEntry machine,int weekNr)
         {
             Machine = machine;
             WeekNr = weekNr;

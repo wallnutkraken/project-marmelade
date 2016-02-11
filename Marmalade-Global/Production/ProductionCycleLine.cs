@@ -22,14 +22,14 @@ namespace Marmalade_Global.Production
         {
         }
 
-        public Machine findMachine(List<Machine> allMachines)
+        public MachineEntry findMachine(List<MachineEntry> allMachines)
         {
-            List<Machine> specificMachines = allMachines.FindAll(machineX => machineX.Type == MachineTypeRequired);
+            List<MachineEntry> specificMachines = allMachines.FindAll(machineX => machineX.Type == MachineTypeRequired);
 
             TimeSpan lowestTimespan = TimeSpan.MaxValue;
-            Machine machine = new Machine();
+            MachineEntry machine = new MachineEntry();
 
-            foreach (Machine item in specificMachines)
+            foreach (MachineEntry item in specificMachines)
             {
                 List<ProductionTask> assignedTasks = item.MachineSchedule.AssignedTasks;
                 TimeSpan totalAssignedTime = new TimeSpan(0, 0, 0);
@@ -45,9 +45,9 @@ namespace Marmalade_Global.Production
             }
             return machine;
         }
-        public void Simulate(List<Machine> allMachines)
+        public void Simulate(List<MachineEntry> allMachines)
         {
-            Machine machine = findMachine(allMachines);
+            MachineEntry machine = findMachine(allMachines);
 
             foreach (ProductionTask task in ProductionTasksRequired)
             {
