@@ -8,8 +8,8 @@ namespace Marmalade_Global
 {
     class WeeklyProduct
     {
-        private Product Product { get; set; }
-        private double TotalKgAmount { get; set; }
+        public Product Product { get; set; }
+        public double TotalKgAmount { get; set; }
 
         public double CalculateTotalPriceForProduct()
         {

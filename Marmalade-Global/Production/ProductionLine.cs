@@ -10,6 +10,7 @@ namespace Marmalade_Global
     {
         public Product Product { get; set; }
         public int Amount { get; set; }
+<<<<<<< HEAD
         public int WeekNr { get; set; }
 
         public ProductionLine(int amount, int weekNr, Product product)
@@ -19,6 +20,17 @@ namespace Marmalade_Global
             Product = product;
         }
         public ProductionLine() : this(0, 0, null)
+=======
+        public int WeekNo { get; set; }
+
+        public ProductionLine(int amount, int week, Product product)
+        {
+            Amount = amount;
+            WeekNo = week;
+            Product = product;
+        }
+        public ProductionLine() : this(0, default(int), null)
+>>>>>>> 3ef72cd8a7e59e88ee3d872909b18a98567d39ab
         {
         }
 

@@ -8,12 +8,12 @@ namespace Marmalade_Global
 {
     class Order
     {
-        private int OrderID { get; set; }
-        private double WeeklyBudget { get; set; }
-        private double TotalAmountOfIngredients { get; set; }
-        private double TotalIngredientsPrice { get; set; }
-        private double TotalSellingPrice { get; set; }
-        private double ExpectedProfit { get; set; }
+        public int OrderID { get; set; }
+        public double WeeklyBudget { get; set; }
+        public double TotalAmountOfIngredients { get; set; }
+        public double TotalIngredientsPrice { get; set; }
+        public double TotalSellingPrice { get; set; }
+        public double ExpectedProfit { get; set; }
         List<Ingredient> TotalIngredientlist = new List<Ingredient>();
 
         public double CalculateTotalIngredientPrice()

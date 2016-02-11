@@ -8,6 +8,9 @@ namespace Marmalade_Global.Production
 {
     interface IProductionTask
     {
+        /// <summary>
+        /// Duration of the task for completion. Minimum 15 minutes.
+        /// </summary>
         TimeSpan Duration { get; set; }
         MachineType MachineTypeRequired { get; set; }
     }
