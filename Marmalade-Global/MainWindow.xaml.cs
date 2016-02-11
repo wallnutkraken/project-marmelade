@@ -30,6 +30,8 @@ namespace Marmalade_Global
         {
             RegisterPlant newWindow = new RegisterPlant();
             newWindow.Show();
+            Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
+            machineWindow.Show();
         }
 
 

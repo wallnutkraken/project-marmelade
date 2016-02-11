@@ -10,11 +10,11 @@ namespace Marmalade_Global
     {
         public Product Product { get; set; }
         public double TotalKgAmount { get; set; }
+        public double TotalSellingPrice { get; set; }
 
         public double CalculateTotalPriceForProduct()
         {
-            // To be filled in
-            return 0.0;
+            return Product.ListPrice() * TotalKgAmount;
         }
 
         public WeeklyProduct(Product product, double totalKgAmount)
