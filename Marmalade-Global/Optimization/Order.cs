@@ -10,45 +10,54 @@ namespace Marmalade_Global
     {
         public int OrderID { get; set; }
         public double WeeklyBudget { get; set; }
-        public double TotalAmountOfIngredients { get; set; }
-        public double TotalIngredientsPrice { get; set; }
+        public double TotalAmountOfProducts { get; set; }
+        public double TotalProductPrice { get; set; }
         public double TotalSellingPrice { get; set; }
         public double ExpectedProfit { get; set; }
-        List<Ingredient> TotalIngredientlist = new List<Ingredient>();
 
-        public double CalculateTotalIngredientPrice()
+        public double CalculateTotalProductPrice() // Calculate the price for all ingredients bought
         {
-            // Calculate the price for all ingredients bought
-            return 0.0;
+            foreach (var weeklyProduct in G3Controller.WeeklyProductlist)
+            {
+                TotalProductPrice += weeklyProduct.CalculateTotalPriceForProduct();
+            }
+            return TotalProductPrice;
+        }
+
+        public double CalculateTotalSellingPrice() // Calculate the price for all ingredients bought
+        {
+            foreach (var Product in G3Controller.ProductList)
+            {
+                TotalSellingPrice += Product.GetProductPrice();
+            }
+            return TotalSellingPrice;
         }
 
         public double CalcualteExpectedProfit()
         {
-            // Calculate the expected profit, based on total
-            // total ingredient prices and expected selling price.
-            return 0.0;
+            return TotalSellingPrice - TotalProductPrice;
         }
+
         public string BestSalesOption()
         {
             // Logic to figure out the best sales option
             return "";
         }
 
-        public Order(int orderID, double weeklyBudget, double totalAmountOfIngredients,
-            double totalIngredientsPrice, double totalSellingPrice, double expectedProfit)
+        public Order(double weeklyBudget)
         {
-            OrderID = orderID; //Replace with list.count from controller
+            OrderID = G3Controller.OrdersList.Count() + 1;
             WeeklyBudget = weeklyBudget;
-            TotalAmountOfIngredients = totalAmountOfIngredients;
-            TotalIngredientsPrice = totalIngredientsPrice;
-            TotalSellingPrice = totalSellingPrice;
-            ExpectedProfit = expectedProfit;
+            TotalAmountOfProducts = G3Controller.ProductList.Count();
+            TotalProductPrice = CalculateTotalProductPrice();
+            TotalSellingPrice = CalculateTotalSellingPrice();
+            ExpectedProfit = CalcualteExpectedProfit();
         }
 
         public override string ToString()
         {
-            return OrderID + ";" + WeeklyBudget + ";" + TotalAmountOfIngredients + ";" +
-                TotalIngredientsPrice + ";" + TotalSellingPrice + ";" + ExpectedProfit;
+            return OrderID + ";" + WeeklyBudget + ";" + TotalAmountOfProducts + ";" +
+                TotalProductPrice + ";" + TotalSellingPrice + ";" + ExpectedProfit;
         }
     }
 }

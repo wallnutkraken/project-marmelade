@@ -17,6 +17,24 @@ namespace Marmalade_Global
         public double ProductPrice { get; set; }
         public List<Ingredient> IngredientList = new List<Ingredient>();
 
+        public double ListPrice() //Takes the price for all ingredients and puts them together.
+        {
+            string HoldingOneOfTheListPrices = "";
+            double totalPriceForIngredients = 0;
+
+            for (int i = 0; i < IngredientList.Count(); i++)
+            {
+                HoldingOneOfTheListPrices = IngredientList[i].ToString();
+
+                string[] numbers = HoldingOneOfTheListPrices.Split(';');
+                double gatheredNumbers = double.Parse(numbers[1]);
+
+                totalPriceForIngredients = (totalPriceForIngredients + gatheredNumbers);
+            }
+
+            return totalPriceForIngredients;
+        }
+
         public Product(int amountOfIngredient, string productName,
             string variety, double size, string containerType,
             double fruitAmountPer100g, double productPrice,
@@ -46,12 +64,17 @@ namespace Marmalade_Global
                 HoldingOneOfTheListElements = IngredientList[i].ToString();
 
                 string[] words = HoldingOneOfTheListElements.Split(';');
-                
+
                 TypesContainedInList = (TypesContainedInList + words[0] + ";");
             }
             return AmountOfIngredient + ";" + ProductName + ";" + Variety + ";" +
                 Size + ";" + ContainerType + ";" + FruitAmountPer100g + ";" +
                 ProductPrice + ";" + TypesContainedInList;
+        }
+
+        public double GetProductPrice()
+        {
+            return ProductPrice;
         }
     }
 }
