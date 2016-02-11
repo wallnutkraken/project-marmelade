@@ -8,14 +8,14 @@ namespace Marmalade_Global
 {
     class Product
     {
-        private int AmountOfIngredient { get; set; }
-        private string ProductName { get; set; }
-        private string Variety { get; set; }
-        private double Size { get; set; }
-        private string ContainerType { get; set; }
-        private double FruitAmountPer100g { get; set; }
-        private double ProductPrice { get; set; }
-        private List<Ingredient> IngredientList = new List<Ingredient>();
+        public int AmountOfIngredient { get; set; }
+        public string ProductName { get; set; }
+        public string Variety { get; set; }
+        public double Size { get; set; }
+        public string ContainerType { get; set; }
+        public double FruitAmountPer100g { get; set; }
+        public double ProductPrice { get; set; }
+        public List<Ingredient> IngredientList = new List<Ingredient>();
 
         public Product(int amountOfIngredient, string productName,
             string variety, double size, string containerType,
