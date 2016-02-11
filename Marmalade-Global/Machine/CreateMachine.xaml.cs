@@ -28,7 +28,21 @@ namespace Marmalade_Global.Machine
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-
+            bool result = MachineController.AddMachine((MachineType)typeComboBox.SelectedItem, location.Text);
+            if (result == true)
+            {
+                MessageBox.Show("Machine successfully added!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Machine could not be created.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+        private void location_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= location_GotFocus;
         }
     }
 }
