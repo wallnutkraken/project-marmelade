@@ -75,7 +75,6 @@
     </Page>
     <Page Include="Optimization\Input Data.xaml" />
     <!-- <Compile Include="WhiteCollar.cs" />
->>>>>>> upstream/master
     <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
