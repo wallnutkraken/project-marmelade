@@ -10,18 +10,56 @@ namespace Marmalade_Global
 {
     class Scheduler
     {
-        private List<ProductionLine> allProductionLines = new List<ProductionLine>();
-        private List<ProductionCycle> allProductionCycles = new List<ProductionCycle>();
-        private List<Machine> allMachines = new List<Machine>();
-        private List<MachineSchedule> allMachineSchedules = new List<MachineSchedule>();
+        List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
+        ProductionCycle pc = new ProductionCycle();
 
         public Scheduler()
         {
         }
 
 
+       // public List<WeeklyProduct> FindWPLs(int weekNr)
+       // {
+       //     List<WeeklyProduct> result = allWPLs.FindAll(WPL => WPL.WeekNr == weekNr);
+       //     return result;
+       // }
+
+       //void test()
+       // {
+       //     int weekNr = 0;
+
+       //     List<WeeklyProduct> list =  FindWPLs(weekNr);
+
+       //     foreach (WeeklyProduct weeklyProduct in list)
+       //     {
+       //        int number =  CalcNrOfIterationsForPC(pc);
 
 
+       //     }
+
+       // }
+
+
+       // void run()
+       // {
+       //     pc.ProductProduced;
+       //     pc.AmountOfProducts;
+       //     pc.PCLsRequired;
+
+       //     WeeklyProduct wp = new WeeklyProduct();
+       //     wp.Product;
+       //     wp.TotalKgAmount;
+
+       //     Product product = new Product();
+       //     product.
+       // }
+
+
+
+       // public int CalcNrOfIterationsForPC(ProductionCycle productionCycle, WeeklyProduct weeklyProduct)
+       // {
+       //      weeklyProduct.TotalKgAmount pc.AmountOfProducts;
+       // }
 
 
 

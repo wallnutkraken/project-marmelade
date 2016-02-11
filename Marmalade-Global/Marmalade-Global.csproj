@@ -67,6 +67,7 @@
     </Page> -->
     <Compile Include="Machine\MachineSchedule.cs" />
     <Compile Include="Production\IProductionTask.cs" />
+    <Compile Include="Production\ProductionCycleLine.cs" />
     <Compile Include="Production\ProductionTask.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="Machine\Machine.cs" />
