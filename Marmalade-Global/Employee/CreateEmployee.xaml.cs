@@ -111,88 +111,35 @@ namespace Marmalade_Global
                 }
             }
 
+            #region NameCheck
             //Check if name is a string
-            if (txtBxs[0].Name == "name_tbx")
+            tryParse = 0;
+            double.TryParse(name_tbx.Text, out tryParse);
+            if (tryParse != 0)
             {
-
-                tryParse = 0;
-                double.TryParse(txtBxs[0].Text, out tryParse);
-                if (tryParse != 0)
-                {
-                    errors.Add("Name cannot be a number");
-                }
+                errors.Add("Name cannot be a number");
             }
-            else
+            #endregion NameCheck
+            #region AddressCheck
+            //Check if address is a string
+            tryParse = 0;
+            double.TryParse(address_tbx.Text, out tryParse);
+            if (tryParse != 0)
             {
-                MessageBox.Show("name_tbx was changed or moved - CreateEmployee.xaml.cs ~ line 109");
+                errors.Add("Address cannot be a number");
             }
-
-            if (txtBxs[1].Name == "address_tbx")
-            {
-                //Check if address is a string
-                tryParse = 0;
-                double.TryParse(txtBxs[1].Text, out tryParse);
-                if (tryParse != 0)
-                {
-                    errors.Add("Address cannot be a number");
-                }
-            }
-            else
-            {
-                MessageBox.Show("address_tbx was changed or moved - CreateEmployee.xaml.cs ~ line 125");
-            }
-
-            if (txtBxs[2].Name == "phoneNr_tbx")
-            {
-                txtBxs[2].Text = txtBxs[2].Text.Trim();
-                if (txtBxs[2].Text.Length == 11)
-                {
-                    //Check if phonenumber starts with +45 and 8 digits follow.
-                    if (txtBxs[2].Text[0] != '+' && txtBxs[2].Text[1] != '4' && txtBxs[2].Text[2] != '5')
-                    {
-                        errors.Add("Phone Number is not danish");
-                    }
-
-                    string number = "";
-                    for (int i = 3; i < txtBxs[2].Text.Length; i++)
-                    {
-                        number += txtBxs[2].Text[i];
-                    }
-
-                    double.TryParse(number, out tryParse);
-
-                    if (tryParse == 0)
-                    {
-                        errors.Add("Phone Number has to be a number");
-                    }
-                }
-                else if (txtBxs[2].Text.Length != 11)
-                {
-                    errors.Add("Phone Number is not valid, remember +45");
-                }
-            }
-
-            else
-            {
-                MessageBox.Show("phoneNr_tbx was changed or moved - CreateEmployee.xaml.cs ~ line 138");
-            }
-
+            #endregion AddressCheck
+            #region WageCheck
             //Check if wage is double
-            if (txtBxs[3].Name == "hourlyWage_tbx")
+            double.TryParse(hourlyWage_tbx.Text, out tryParse);
+            if (tryParse == 0)
             {
-                double.TryParse(txtBxs[3].Text, out tryParse);
-                if (tryParse == 0)
-                {
-                    errors.Add("Wage has to be a number");
-                }
+                errors.Add("Wage has to be a number");
             }
-            else
-            {
-                MessageBox.Show("hourlyWage_tbx was changed or moved - CreateEmployee.xaml.cs ~ line 170");
-            }
-
+            #endregion WageCheck
+            #region CPRCheck
             //Check if CPR starts with 6 possible digits and 4 digits follow. 
-            if (txtBxs[4].Name == "legalId_tbx")
+            if (legalId_tbx.Name == "legalId_tbx")
             {
                 bool number = false;
 
@@ -206,11 +153,11 @@ namespace Marmalade_Global
 
                 int outInt = 0;
 
-                if (txtBxs[4].Text.Length == 10)
+                if (legalId_tbx.Text.Length == 10)
                 {
-                    dd = txtBxs[4].Text[0].ToString() + txtBxs[4].Text[1].ToString();
-                    mm = txtBxs[4].Text[2].ToString() + txtBxs[4].Text[3].ToString();
-                    yy = txtBxs[4].Text[4].ToString() + txtBxs[4].Text[5].ToString();
+                    dd = legalId_tbx.Text[0].ToString() + legalId_tbx.Text[1].ToString();
+                    mm = legalId_tbx.Text[2].ToString() + legalId_tbx.Text[3].ToString();
+                    yy = legalId_tbx.Text[4].ToString() + legalId_tbx.Text[5].ToString();
 
                     int.TryParse(dd, out outInt);
                     if (outInt != 0)
@@ -244,7 +191,7 @@ namespace Marmalade_Global
 
                 }
 
-                double.TryParse(txtBxs[4].Text, out tryParse);
+                double.TryParse(legalId_tbx.Text, out tryParse);
 
                 if (tryParse != 0)
                 {
@@ -264,7 +211,7 @@ namespace Marmalade_Global
                         errors.Add("Year is not possible");
                     }
                 }
-                else if (txtBxs[4].Text.Length != 10)
+                else if (legalId_tbx.Text.Length != 10)
                 {
                     errors.Add("CPR has to be 10 digits long");
                 }
@@ -274,11 +221,7 @@ namespace Marmalade_Global
                 }
 
             }
-
-            else
-            {
-                MessageBox.Show("legalId_tbx was changed or moved - CreateEmployee.xaml.cs ~ line 183");
-            }
+            #endregion CPRCheck
             MessageBox.Show(errors.Count + " errors were found");
             for (int i = 0; i < errors.Count; i++)
             {
