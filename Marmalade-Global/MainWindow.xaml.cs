@@ -24,14 +24,6 @@ namespace Marmalade_Global
         public MainWindow()
         {
             InitializeComponent();
-
-            testmethod();
-        }
-
-        void testmethod()
-        {
-            CreateEmployee newWindow = new CreateEmployee();
-            newWindow.Show();
         }
 
     }
