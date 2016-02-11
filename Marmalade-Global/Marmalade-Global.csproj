@@ -61,7 +61,7 @@
     <Compile Include="Plant\PlantController.cs" />
     <Compile Include="Plant\RegisterPlant.xaml.cs">
       <DependentUpon>RegisterPlant.xaml</DependentUpon>
-    </Complile>
+    </Compile>
     <Compile Include="Machine\CreateMachine.xaml.cs">
       <DependentUpon>CreateMachine.xaml</DependentUpon>
     </Compile>
