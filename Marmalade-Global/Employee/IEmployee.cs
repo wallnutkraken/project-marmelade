@@ -14,10 +14,16 @@ namespace Marmalade_Global
         double HourlyWage { get; set; }
         string Name { get; set; }
         string PhoneNo { get; set; }
+        /// <summary>
+        /// Full primary address
+        /// </summary>
         string Address { get; set; }
+        /// <summary>
+        /// CPR number or any other official identification
+        /// </summary>
         string PersonalID { get; set; }
-        EmployeeEnums.MaritalStatus MaritalStatus { get; set; }
-        EmployeeEnums.Department Department { get; set; }
+        EmployeeStatuses.MaritalStatus MaritalStatus { get; set; }
+        EmployeeStatuses.Department Department { get; set; }
 
     }
 }

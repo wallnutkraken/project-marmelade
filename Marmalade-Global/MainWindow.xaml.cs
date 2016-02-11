@@ -26,5 +26,9 @@ namespace Marmalade_Global
             InitializeComponent();
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown(0);
+        }
     }
 }

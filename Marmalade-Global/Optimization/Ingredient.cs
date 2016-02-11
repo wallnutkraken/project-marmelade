@@ -8,9 +8,9 @@ namespace Marmalade_Global
 {
     class Ingredient
     {
-        private string Type { get; set; }
-        private double Weight { get; set; }
-        private double IngredientPrice { get; set; }
+        public string Type { get; set; }
+        public double Weight { get; set; }
+        public double IngredientPrice { get; set; }
 
         public Ingredient(string type, double weight, double ingredientprice)
         {
