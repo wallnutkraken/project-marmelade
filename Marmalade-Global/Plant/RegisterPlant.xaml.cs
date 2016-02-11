@@ -84,6 +84,7 @@ namespace Marmalade_Global
             {
                 // registering plant
                 PlantController.RegisterPlant(textBoxName.Text, textBoxType.Text, resultLifetime, resultProcValue, resultScrapValue, resultYearsUsed);
+                MessageBox.Show("REG SUCCESS!");
             }
             
         }

@@ -24,7 +24,14 @@ namespace Marmalade_Global
         public MainWindow()
         {
             InitializeComponent();
+            testmethod();
         }
+        void testmethod()
+        {
+            RegisterPlant newWindow = new RegisterPlant();
+            newWindow.Show();
+        }
+
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

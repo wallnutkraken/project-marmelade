@@ -57,13 +57,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Bill.cs" />
-    <Compile Include="Plant.cs" />
-    <Compile Include="PlantController.cs" />
-    <Compile Include="RegisterPlant.xaml.cs">
+    <Compile Include="Plant\Plant.cs" />
+    <Compile Include="Plant\PlantController.cs" />
+    <Compile Include="Plant\RegisterPlant.xaml.cs">
       <DependentUpon>RegisterPlant.xaml</DependentUpon>
     </Compile>
-    <Page Include="Input Data.xaml" />
-    <Compile Include="WhiteCollar.cs" />
     <Compile Include="Optimization\G3Controller.cs" />
     <Compile Include="Optimization\Order.cs" />
     <Compile Include="Optimization\WeeklyProduct.cs" />
@@ -121,7 +119,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RegisterPlant.xaml"/>
+    <Page Include="Plant\RegisterPlant.xaml" />
     <Page Include="ScheduleEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
