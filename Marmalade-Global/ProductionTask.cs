@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Marmalade_Global
 {
-    class ProductionTask
+    public class ProductionTask
     {
         public TimeSpan Duration { get; set; }
         public MachineType MachineTypeRequired { get; set; }

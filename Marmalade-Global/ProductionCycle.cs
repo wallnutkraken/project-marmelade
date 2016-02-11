@@ -8,17 +8,17 @@ namespace Marmalade_Global
 {
     class ProductionCycle
     {
-        public List<ProductionTask> TasksRequired { get; set; } = new List<ProductionTask>();
+        public List<ProductionCycleLine> PCLRequired { get; set; } = new List<ProductionCycleLine>();
         public int AmountOfProducts { get; set; }
-        public Product ProductsProduced { get; set; }
-
-        public ProductionCycle():this(0,null)
-        {
-        }
+        public Product ProductProduced { get; set; }
         public ProductionCycle(int amountOfProductsNeeded, Product product)
         {
             AmountOfProducts = amountOfProductsNeeded;
-            ProductsProduced = product;
+            ProductProduced = product;
         }
+        public ProductionCycle():this(0,null)
+        {
+        }
+
     }
 }

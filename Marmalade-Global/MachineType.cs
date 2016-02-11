@@ -1,6 +1,6 @@
 ﻿namespace Marmalade_Global
 {
-    enum MachineType
+    public enum MachineType
     {
         Filling,
         Tank
