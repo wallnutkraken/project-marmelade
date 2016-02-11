@@ -32,6 +32,8 @@ namespace Marmalade_Global
         {
             CreateEmployee newWindow = new CreateEmployee();
             newWindow.Show();
+            Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
+            machineWindow.Show();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
