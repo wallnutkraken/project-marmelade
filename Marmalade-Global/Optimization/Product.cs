@@ -8,16 +8,46 @@ namespace Marmalade_Global
 {
     class Product
     {
+        /// <summary>
+        /// The amount of different ingredients needed in this product.
+        /// </summary>
         public int AmountOfIngredient { get; set; }
+
+        /// <summary>
+        /// The name of the product.
+        /// </summary>
         public string ProductName { get; set; }
+
+        /// <summary>
+        /// The Variety of the product (the quality).
+        /// </summary>
         public string Variety { get; set; }
+
+        /// <summary>
+        /// The Size of this product (weight in g).
+        /// </summary>
         public double Size { get; set; }
+
+        /// <summary>
+        /// The container the product will be in.
+        /// </summary>
         public string ContainerType { get; set; }
-        public double FruitAmountPer100g { get; set; }
+
+        /// <summary>
+        /// The selling price on this product.
+        /// </summary>
         public double ProductPrice { get; set; }
+
+        /// <summary>
+        /// A list of ingredients used in this product
+        /// </summary>
         public List<Ingredient> IngredientList = new List<Ingredient>();
 
-        public double ListPrice() //Takes the price for all ingredients and puts them together.
+        /// <summary>
+        /// Calculates the price for the ingredients used in the product.
+        /// </summary>
+        /// <returns></returns>
+        public double ListPrice()
         {
             string HoldingOneOfTheListPrices = "";
             double totalPriceForIngredients = 0;
@@ -35,6 +65,18 @@ namespace Marmalade_Global
             return totalPriceForIngredients;
         }
 
+        /// <summary>
+        /// Full-args constructor, that adds the ingredients given to the ingredient list.
+        /// </summary>
+        /// <param name="amountOfIngredient"></param>
+        /// <param name="productName"></param>
+        /// <param name="variety"></param>
+        /// <param name="size"></param>
+        /// <param name="containerType"></param>
+        /// <param name="fruitAmountPer100g"></param>
+        /// <param name="productPrice"></param>
+        /// <param name="IngredientOne"></param>
+        /// <param name="IngredientTwo"></param>
         public Product(int amountOfIngredient, string productName,
             string variety, double size, string containerType,
             double fruitAmountPer100g, double productPrice,
@@ -45,7 +87,6 @@ namespace Marmalade_Global
             Variety = variety;
             Size = size;
             ContainerType = containerType;
-            FruitAmountPer100g = fruitAmountPer100g;
             ProductPrice = productPrice;
 
             for (int i = 0; i < amountOfIngredient; i++)
@@ -68,10 +109,14 @@ namespace Marmalade_Global
                 TypesContainedInList = (TypesContainedInList + words[0] + ";");
             }
             return AmountOfIngredient + ";" + ProductName + ";" + Variety + ";" +
-                Size + ";" + ContainerType + ";" + FruitAmountPer100g + ";" +
+                Size + ";" + ContainerType + ";" +
                 ProductPrice + ";" + TypesContainedInList;
         }
 
+        /// <summary>
+        /// Simply returns the ProductPrice (Laziness).
+        /// </summary>
+        /// <returns></returns>
         public double GetProductPrice()
         {
             return ProductPrice;
