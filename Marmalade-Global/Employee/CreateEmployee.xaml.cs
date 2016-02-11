@@ -29,19 +29,15 @@ namespace Marmalade_Global
 
         }
 
-        List<T> EnumToListForCombobox<T>()
-        {
-            List<T> allEnums = Enum.GetValues(typeof(T)).Cast<T>().ToList();
-            return allEnums;
-        }
+
         /// <summary>
         /// Calls ViewController for getting domain enums into ienumerables ???? SD / layers 
         /// </summary>
         private void InitializeComboboxes()
         {
-            shift_cbx.ItemsSource = EnumToListForCombobox<EmployeeStatuses.Shift>();
-            maritalStatus_cbx.ItemsSource = EnumToListForCombobox<EmployeeStatuses.MaritalStatus>();
-            department_cbx.ItemsSource = EnumToListForCombobox<EmployeeStatuses.Department>();
+            shift_cbx.ItemsSource = UtilityController.EnumToList<EmployeeStatuses.Shift>();
+            maritalStatus_cbx.ItemsSource = UtilityController.EnumToList<EmployeeStatuses.MaritalStatus>();
+            department_cbx.ItemsSource = UtilityController.EnumToList<EmployeeStatuses.Department>();
         }
 
         #region GotFocus Methods
