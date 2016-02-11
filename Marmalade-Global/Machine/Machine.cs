@@ -8,14 +8,18 @@ namespace Marmalade_Global
 {
     class MachineEntry 
     {
-        private MachineType _Type;
         /// <summary>
         /// Gets the type of the machine as it was initialized.
         /// </summary>
         MachineType Type { get { return _Type; } }
-        public MachineEntry(MachineType type)
+        public MachineType Type { get; set; }
+
+        public MachineSchedule MachineSchedule { get; set; }
+
+
+        public Machine(MachineType type)
         {
-            _Type = type;
+            Type = type;
         }
         public MachineEntry() : this((MachineType)0)
         {

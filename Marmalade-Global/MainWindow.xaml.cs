@@ -26,6 +26,8 @@ namespace Marmalade_Global
             InitializeComponent();
 
             testmethod();
+
+
         }
 
         void testmethod()

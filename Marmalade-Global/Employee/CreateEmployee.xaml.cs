@@ -31,7 +31,7 @@ namespace Marmalade_Global
 
 
         /// <summary>
-        /// Calls ViewController for getting domain enums into ienumerables ???? SD / layers 
+        /// Calls ViewController for getting domain enums into ienumerables ???? SD / layers
         /// </summary>
         private void InitializeComboboxes()
         {

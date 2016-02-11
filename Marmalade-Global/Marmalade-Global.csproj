@@ -75,6 +75,7 @@
     </Page> -->
     <Compile Include="Machine\MachineSchedule.cs" />
     <Compile Include="Production\IProductionTask.cs" />
+    <Compile Include="Production\ProductionCycleLine.cs" />
     <Compile Include="Production\ProductionTask.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="Machine\Machine.cs" />
@@ -144,6 +145,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
