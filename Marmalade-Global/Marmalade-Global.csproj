@@ -58,8 +58,9 @@
     </ApplicationDefinition>
     <Compile Include="G3Controller.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="Production\ProductionCycleLine.cs" />
     <Compile Include="WeeklyProduct.cs" />
-    <Page Include="Input Data.xaml"/>
+    <Page Include="Input Data.xaml" />
     <!-- <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
       <SubType>Designer</SubType>

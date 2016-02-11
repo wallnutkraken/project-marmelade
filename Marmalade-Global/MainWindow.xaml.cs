@@ -27,8 +27,6 @@ namespace Marmalade_Global
 
             testmethod();
 
-            Scheduler scheduler = new Scheduler();
-            scheduler.Run();
 
         }
 

@@ -173,8 +173,8 @@ namespace Marmalade_Global
         //    }
         //}
 
-        ProductionLine productionLine = new ProductionLine();
-        ProductionCycle productionCycle = new ProductionCycle();
+        //ProductionLine productionLine = new ProductionLine();
+        //ProductionCycle productionCycle = new ProductionCycle();
     }
 }
 
