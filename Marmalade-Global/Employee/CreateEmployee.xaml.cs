@@ -199,7 +199,7 @@ namespace Marmalade_Global
             if (txtBxs[4].Name == "legalId_tbx")
             {
                 bool number = false;
-            
+
 
                 string dd = "";
                 string mm = "";
@@ -240,7 +240,8 @@ namespace Marmalade_Global
                     if (outInt != 0)
                     {
                         year = outInt;
-                    } else
+                    }
+                    else
                     {
                         number = false;
                     }
@@ -295,7 +296,7 @@ namespace Marmalade_Global
                 }
             }
 
-            if(errors.Count == 0)
+            if (errors.Count == 0)
             {
                 confirmed = true;
             }
@@ -305,42 +306,43 @@ namespace Marmalade_Global
 
         private void createEmployee_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (ConfirmInput()) { 
-            string name = name_tbx.Text;
-            string phoneNo = phoneNr_tbx.Text;
-            string address = address_tbx.Text;
-            double hourlyWage = Convert.ToDouble(hourlyWage_tbx.Text);
-            string personalID = legalId_tbx.Text;
-            EmployeeStatuses.Department department = (EmployeeStatuses.Department)Enum.Parse(typeof(EmployeeStatuses.Department), department_cbx.Text);
-
-            EmployeeStatuses.MaritalStatus marital = (EmployeeStatuses.MaritalStatus)Enum.Parse(typeof(EmployeeStatuses.MaritalStatus), maritalStatus_cbx.Text);
-
-
-            if (!shift_cbx.Text.Equals(""))
+            if (ConfirmInput())
             {
-                EmployeeStatuses.Shift shift = (EmployeeStatuses.Shift)Enum.Parse(typeof(EmployeeStatuses.Shift), shift_cbx.Text);
-                EmployeeController.CreateEmployee(name,
-                                phoneNo,
-                                address,
-                                hourlyWage,
-                                personalID,
-                                shift,
-                                department,
-                                marital);
-            }
-            else
-            {
-                EmployeeController.CreateEmployee(name,
-                                phoneNo,
-                                address,
-                                hourlyWage,
-                                personalID,
-                                department,
-                                marital);
-            }
+                string name = name_tbx.Text;
+                string phoneNo = phoneNr_tbx.Text;
+                string address = address_tbx.Text;
+                double hourlyWage = Convert.ToDouble(hourlyWage_tbx.Text);
+                string personalID = legalId_tbx.Text;
+                EmployeeStatuses.Department department = (EmployeeStatuses.Department)Enum.Parse(typeof(EmployeeStatuses.Department), department_cbx.Text);
+
+                EmployeeStatuses.MaritalStatus marital = (EmployeeStatuses.MaritalStatus)Enum.Parse(typeof(EmployeeStatuses.MaritalStatus), maritalStatus_cbx.Text);
 
 
-        }
+                if (!shift_cbx.Text.Equals(""))
+                {
+                    EmployeeStatuses.Shift shift = (EmployeeStatuses.Shift)Enum.Parse(typeof(EmployeeStatuses.Shift), shift_cbx.Text);
+                    EmployeeController.CreateEmployee(name,
+                                    phoneNo,
+                                    address,
+                                    hourlyWage,
+                                    personalID,
+                                    shift,
+                                    department,
+                                    marital);
+                }
+                else
+                {
+                    EmployeeController.CreateEmployee(name,
+                                    phoneNo,
+                                    address,
+                                    hourlyWage,
+                                    personalID,
+                                    department,
+                                    marital);
+                }
+
+
+            }
         }
     }
 }
