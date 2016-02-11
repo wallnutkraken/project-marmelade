@@ -28,8 +28,8 @@ namespace Marmalade_Global
         }
         void testmethod()
         {
-            RegisterPlant newWindow = new RegisterPlant();
-            newWindow.Show();
+            PlantWindow plantWindow = new PlantWindow();
+            plantWindow.Show();
             Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
             machineWindow.Show();
         }
