@@ -28,10 +28,12 @@ namespace Marmalade_Global
         }
         void testmethod()
         {
-            PlantWindow plantWindow = new PlantWindow();
-            plantWindow.Show();
+            CreateEmployee newWindow = new CreateEmployee();
+            newWindow.Show();
             Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
             machineWindow.Show();
+            PlantWindow plantWindow = new PlantWindow();
+            plantWindow.Show();
         }
 
 
