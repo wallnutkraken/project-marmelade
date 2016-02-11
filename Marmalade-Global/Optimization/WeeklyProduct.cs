@@ -10,6 +10,7 @@ namespace Marmalade_Global
     {
         public Product Product { get; set; }
         public double TotalKgAmount { get; set; }
+        public int WeekNumber { get; set; }
 
         public double CalculateTotalPriceForProduct()
         {
@@ -17,10 +18,11 @@ namespace Marmalade_Global
             return 0.0;
         }
 
-        public WeeklyProduct(Product product, double totalKgAmount)
+        public WeeklyProduct(Product product, double totalKgAmount, int weekNumber)
         {
             Product = product;
             TotalKgAmount = totalKgAmount;
+            WeekNumber = weekNumber;
         }
 
         public override string ToString()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Marmalade_Global.Production;
 
 namespace Marmalade_Global
 {
@@ -11,12 +12,12 @@ namespace Marmalade_Global
         public Machine Machine { get; set; }
         public List<ProductionTask> AssignedTasks { get; set; } = new List<ProductionTask>();
 
-        public DateTime  WeekNr { get; set; }
+        public int  WeekNr { get; set; }
 
-        public MachineSchedule():this(null,default(DateTime))
+        public MachineSchedule():this(null,0)
         {
         }
-        public MachineSchedule(Machine machine,DateTime weekNr)
+        public MachineSchedule(Machine machine,int weekNr)
         {
             Machine = machine;
             WeekNr = weekNr;

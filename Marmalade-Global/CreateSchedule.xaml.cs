@@ -11,38 +11,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Marmalade_Global
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateSchedule.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateSchedule : Window
     {
-        public MainWindow()
+        Scheduler scheduler = new Scheduler();
+        public CreateSchedule()
         {
             InitializeComponent();
 
-            testmethod();
-
-
         }
 
-        void testmethod()
+        private void createSchedule_btn_Click(object sender, RoutedEventArgs e)
         {
-            CreateEmployee newWindow = new CreateEmployee();
-            newWindow.Show();
+            int weekNumber = 1;
 
-            CreateSchedule newWindow1 = new CreateSchedule();
-            newWindow1.Show();
+            scheduler.fillLists();
 
-        }
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Application.Current.Shutdown(0);
+            scheduler.CreateScheduleForAllMachines(weekNumber);
         }
     }
 }

@@ -36,6 +36,9 @@ namespace Marmalade_Global
                 IngredientList.Add(IngredientTwo);
             }
         }
+        public Product() : this(0,"","",0.0,"",0.0,0.0,null,null)
+        {
+        }
 
         public override string ToString()
         {

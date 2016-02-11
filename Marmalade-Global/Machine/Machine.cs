@@ -10,7 +10,7 @@ namespace Marmalade_Global
     {
         public MachineType Type { get; set; }
 
-        public MachineSchedule MachineSchedule { get; set; }
+        public MachineSchedule MachineSchedule { get; set; } = new MachineSchedule();
 
 
         public Machine(MachineType type)

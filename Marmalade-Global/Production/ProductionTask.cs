@@ -1,11 +1,10 @@
-﻿using Marmalade_Global.Production;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Marmalade_Global
+namespace Marmalade_Global.Production
 {
     class ProductionTask : IProductionTask
     {
@@ -20,7 +19,7 @@ namespace Marmalade_Global
             Duration = duration;
             MachineTypeRequired = machineTypeRequired;
         }
-        public ProductionTask():this(default(TimeSpan), (MachineType)0)
+        public ProductionTask() : this(default(TimeSpan), (MachineType)0)
         {
         }
     }

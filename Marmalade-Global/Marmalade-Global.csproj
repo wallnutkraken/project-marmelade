@@ -56,9 +56,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CreateSchedule.xaml.cs">
+      <DependentUpon>CreateSchedule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Optimization\G3Controller.cs" />
     <Compile Include="Optimization\Order.cs" />
     <Compile Include="Optimization\WeeklyProduct.cs" />
+    <Page Include="CreateSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Optimization\Input Data.xaml" />
     <!-- <Compile Include="WhiteCollar.cs" />
     <Page Include="CreateEmployee.xaml">
