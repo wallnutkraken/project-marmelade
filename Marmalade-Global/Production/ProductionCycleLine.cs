@@ -21,7 +21,11 @@ namespace Marmalade_Global.Production
         public ProductionCycleLine():this(0,default(MachineType))
         {
         }
-
+        /// <summary>
+        /// Part of schedule creating
+        /// </summary>
+        /// <param name="allMachines"></param>
+        /// <returns></returns>
         public MachineEntry findMachine(List<MachineEntry> allMachines)
         {
             List<MachineEntry> specificMachines = allMachines.FindAll(machineX => machineX.Type == MachineTypeRequired);
@@ -45,6 +49,11 @@ namespace Marmalade_Global.Production
             }
             return machine;
         }
+
+        /// <summary>
+        /// Part of Schedule creating
+        /// </summary>
+        /// <param name="allMachines"></param>
         public void Simulate(List<MachineEntry> allMachines)
         {
             MachineEntry machine = findMachine(allMachines);

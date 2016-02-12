@@ -23,6 +23,10 @@ namespace Marmalade_Global
         {
 
         }
+        /// <summary>
+        /// Part of Creating machine schedule
+        /// </summary>
+        /// <param name="allMAchines"></param>
         public void Simulate(List<MachineEntry> allMAchines)
         {
             foreach (var item in PCLsRequired)

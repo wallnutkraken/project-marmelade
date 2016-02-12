@@ -11,20 +11,32 @@ namespace Marmalade_Global
 {
     class Scheduler
     {
+        /// <summary>
+        /// list of all of ours weekly products
+        /// </summary>
         List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
+        /// <summary>
+        /// just a object of Production Cycle for testing purposes
+        /// </summary>
         ProductionCycle pc = new ProductionCycle();
+        /// <summary>
+        /// List of all the machines that we have
+        /// </summary>
         List<MachineEntry> allMachines = new List<MachineEntry>();
 
-
+        /// <summary>
+        /// JUST FOR TESTING
+        /// fill up all the lists and create objects
+        /// </summary>
         public void fillLists()
         {
             Product product = new Product();
             product.Size = 10;
 
-            allWPLs.Add(new WeeklyProduct(product, 20, 1));
-            allWPLs.Add(new WeeklyProduct(product, 40, 1));
-            allWPLs.Add(new WeeklyProduct(product, 60, 1));
-            allWPLs.Add(new WeeklyProduct(product, 10, 1));
+            allWPLs.Add(new WeeklyProduct(product, 20));
+            allWPLs.Add(new WeeklyProduct(product, 40));
+            allWPLs.Add(new WeeklyProduct(product, 60));
+            allWPLs.Add(new WeeklyProduct(product, 10));
 
             ProductionCycle x = new ProductionCycle();
             x.AmountOfProducts = 100;
@@ -115,13 +127,21 @@ namespace Marmalade_Global
         {
         }
 
-
+        /// <summary>
+        /// Find all the products that need to be done in specific week
+        /// </summary>
+        /// <param name="weekNr"></param>
+        /// <returns></returns>
         public List<WeeklyProduct> FindWPLs(int weekNr)
         {
             List<WeeklyProduct> result = allWPLs.FindAll(WPL => WPL.WeekNumber == weekNr);
             return result;
         }
 
+        /// <summary>
+        /// This method creates schedule for all the machines 
+        /// </summary>
+        /// <param name="weekNumber"></param>
         public void CreateScheduleForAllMachines(int weekNumber)
         {
             List<WeeklyProduct> list = FindWPLs(weekNumber);
@@ -136,7 +156,12 @@ namespace Marmalade_Global
                 }
             }
         }
-
+        /// <summary>
+        /// Calculates number of iterations for our 'main' loop in CreateScheduleForAllMachines method
+        /// </summary>
+        /// <param name="productionCycle"></param>
+        /// <param name="weeklyProduct"></param>
+        /// <returns></returns>
         public int CalcNrOfIterationsForPC(ProductionCycle productionCycle, WeeklyProduct weeklyProduct)
         {
             double amountOfProducts = weeklyProduct.TotalKgAmount / (weeklyProduct.Product.Size * 100);
