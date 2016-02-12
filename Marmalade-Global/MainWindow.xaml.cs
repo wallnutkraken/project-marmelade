@@ -24,12 +24,10 @@ namespace Marmalade_Global
         public MainWindow()
         {
             InitializeComponent();
-
             testmethod();
 
 
         }
-
         void testmethod()
         {
             CreateEmployee newWindow = new CreateEmployee();
@@ -40,7 +38,10 @@ namespace Marmalade_Global
 
             Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
             machineWindow.Show();
+            PlantWindow plantWindow = new PlantWindow();
+            plantWindow.Show();
         }
+
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

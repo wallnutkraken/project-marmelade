@@ -56,6 +56,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Bill.cs" />
+    <Compile Include="Plant\PlantWindow.xaml.cs">
+      <DependentUpon>PlantWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Plant\Plant.cs" />
+    <Compile Include="Plant\PlantController.cs" />
+    <Compile Include="Plant\RegisterPlant.xaml.cs">
+      <DependentUpon>RegisterPlant.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Machine\CreateMachine.xaml.cs">
       <DependentUpon>CreateMachine.xaml</DependentUpon>
     </Compile>
@@ -129,6 +138,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Plant\PlantWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Plant\RegisterPlant.xaml" />
     <Page Include="ScheduleEntry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
