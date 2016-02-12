@@ -10,8 +10,17 @@ namespace Marmalade_Global
 {
     class Scheduler
     {
+        /// <summary>
+        /// List of all the 
+        /// </summary>
         List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
+        /// <summary>
+        /// 
+        /// </summary>
         ProductionCycle pc = new ProductionCycle();
+        /// <summary>
+        /// 
+        /// </summary>
         List<Machine> allMachines = new List<Machine>();
 
         public Scheduler()
