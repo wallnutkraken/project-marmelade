@@ -24,17 +24,24 @@ namespace Marmalade_Global
         public MainWindow()
         {
             InitializeComponent();
-
             testmethod();
 
 
         }
-
         void testmethod()
         {
             CreateEmployee newWindow = new CreateEmployee();
             newWindow.Show();
+
+            CreateSchedule newWindow1 = new CreateSchedule();
+            newWindow1.Show();
+
+            Marmalade_Global.Machine.CreateMachine machineWindow = new Machine.CreateMachine();
+            machineWindow.Show();
+            PlantWindow plantWindow = new PlantWindow();
+            plantWindow.Show();
         }
+
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

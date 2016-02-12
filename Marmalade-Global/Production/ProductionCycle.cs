@@ -23,7 +23,7 @@ namespace Marmalade_Global
         {
 
         }
-        public void Simulate(List<Machine> allMAchines)
+        public void Simulate(List<MachineEntry> allMAchines)
         {
             foreach (var item in PCLsRequired)
             {

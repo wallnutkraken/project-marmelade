@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using Marmalade_Global.Production;
 
 namespace Marmalade_Global
 {
@@ -12,7 +13,103 @@ namespace Marmalade_Global
     {
         List<WeeklyProduct> allWPLs = new List<WeeklyProduct>();
         ProductionCycle pc = new ProductionCycle();
-        List<Machine> allMachines = new List<Machine>();
+        List<MachineEntry> allMachines = new List<MachineEntry>();
+
+
+        public void fillLists()
+        {
+            Product product = new Product();
+            product.Size = 10;
+
+            allWPLs.Add(new WeeklyProduct(product, 20, 1));
+            allWPLs.Add(new WeeklyProduct(product, 40, 1));
+            allWPLs.Add(new WeeklyProduct(product, 60, 1));
+            allWPLs.Add(new WeeklyProduct(product, 10, 1));
+
+            ProductionCycle x = new ProductionCycle();
+            x.AmountOfProducts = 100;
+            x.ProductProduced = product;
+
+            pc = x;
+
+            ProductionCycleLine pc1 = new ProductionCycleLine(2, MachineType.Tank);
+            ProductionCycleLine pc2 = new ProductionCycleLine(1, MachineType.Filling);
+
+            x.PCLsRequired.Add(pc1);
+            x.PCLsRequired.Add(pc2);
+
+            List<ProductionTask> productionTasksRequired1 = pc1.ProductionTasksRequired;
+            List<ProductionTask> productionTasksRequired2 = pc2.ProductionTasksRequired;
+
+            /// remove machineType from tasks one DAY!!!!
+            ProductionTask task1 = new ProductionTask(new TimeSpan(1, 1, 1), MachineType.Tank);
+            ProductionTask task2 = new ProductionTask(new TimeSpan(2, 1, 1), MachineType.Tank);
+            ProductionTask task3 = new ProductionTask(new TimeSpan(0, 1, 1), MachineType.Tank);
+            ProductionTask task4 = new ProductionTask(new TimeSpan(5, 1, 1), MachineType.Tank);
+            ProductionTask task5 = new ProductionTask(new TimeSpan(6, 1, 1), MachineType.Tank);
+
+            ProductionTask task01 = new ProductionTask(new TimeSpan(1, 1, 1), MachineType.Filling);
+            ProductionTask task02 = new ProductionTask(new TimeSpan(1, 1, 1), MachineType.Filling);
+            ProductionTask task03 = new ProductionTask(new TimeSpan(1, 1, 1), MachineType.Filling);
+            ProductionTask task04 = new ProductionTask(new TimeSpan(1, 1, 1), MachineType.Filling);
+            ProductionTask task05 = new ProductionTask(new TimeSpan(1, 1, 1), MachineType.Filling);
+
+
+            productionTasksRequired1.Add(task1);
+            productionTasksRequired1.Add(task2);
+            productionTasksRequired1.Add(task3);
+            productionTasksRequired1.Add(task4);
+            productionTasksRequired1.Add(task5);
+            productionTasksRequired2.Add(task01);
+            productionTasksRequired2.Add(task02);
+            productionTasksRequired2.Add(task03);
+            productionTasksRequired2.Add(task04);
+            productionTasksRequired2.Add(task05);
+
+            MachineEntry tank1 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank2 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank3 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank4 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank5 = new MachineEntry(MachineType.Tank);
+            MachineEntry tank6 = new MachineEntry(MachineType.Tank);
+
+            MachineSchedule msc1 = new MachineSchedule(tank1, 1);
+            MachineSchedule msc2 = new MachineSchedule(tank2, 1);
+            MachineSchedule msc3 = new MachineSchedule(tank3, 1);
+            MachineSchedule msc4 = new MachineSchedule(tank4, 1);
+            MachineSchedule msc5 = new MachineSchedule(tank5, 1);
+            MachineSchedule msc6 = new MachineSchedule(tank6, 1);
+
+            MachineEntry filling1 = new MachineEntry(MachineType.Filling);
+            MachineEntry filling2 = new MachineEntry(MachineType.Filling);
+            MachineEntry filling3 = new MachineEntry(MachineType.Filling);
+            MachineEntry filling4 = new MachineEntry(MachineType.Filling);
+
+            MachineSchedule msc01 = new MachineSchedule(filling1, 1);
+            MachineSchedule msc02 = new MachineSchedule(filling2, 1);
+            MachineSchedule msc03 = new MachineSchedule(filling3, 1);
+            MachineSchedule msc04 = new MachineSchedule(filling4, 1);
+
+            msc01.AssignedTasks.Add(task01);
+            msc01.AssignedTasks.Add(task02);
+
+            msc1.AssignedTasks.Add(task1);
+            msc1.AssignedTasks.Add(task3);
+
+            allMachines.Add(tank1);
+            allMachines.Add(tank2);
+            allMachines.Add(tank3);
+            allMachines.Add(tank4);
+            allMachines.Add(tank5);
+            allMachines.Add(tank6);
+            allMachines.Add(filling1);
+            allMachines.Add(filling2);
+            allMachines.Add(filling3);
+            allMachines.Add(filling4);
+
+
+
+        }
 
         public Scheduler()
         {
@@ -21,15 +118,13 @@ namespace Marmalade_Global
 
         public List<WeeklyProduct> FindWPLs(int weekNr)
         {
-            List<WeeklyProduct> result = allWPLs.FindAll(WPL => WPL.WeekNr == weekNr);
+            List<WeeklyProduct> result = allWPLs.FindAll(WPL => WPL.WeekNumber == weekNr);
             return result;
         }
 
-        void test()
+        public void CreateScheduleForAllMachines(int weekNumber)
         {
-            int weekNr = 0;
-
-            List<WeeklyProduct> list = FindWPLs(weekNr);
+            List<WeeklyProduct> list = FindWPLs(weekNumber);
 
             foreach (WeeklyProduct weeklyProduct in list)
             {
@@ -45,89 +140,12 @@ namespace Marmalade_Global
         public int CalcNrOfIterationsForPC(ProductionCycle productionCycle, WeeklyProduct weeklyProduct)
         {
             double amountOfProducts = weeklyProduct.TotalKgAmount / (weeklyProduct.Product.Size * 100);
-            int amount = (int)amountOfProducts;
-            double result = (double)amount / (double)productionCycle.AmountOfProducts;
+            double amount = amountOfProducts;
+            double result = amount / productionCycle.AmountOfProducts;
             int resultInt = (int)Math.Ceiling(result);
             return resultInt;
         }
 
-
-        //public void Run()
-        //{
-        //    // scheduling for the current Week // or a given week
-        //    Calendar calendar = CultureInfo.InvariantCulture.Calendar;
-        //    int weekNumber = calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
-
-        //    // find all production lines for the week we are scheduling for
-        //    List<ProductionLine> currentProductionLines = allProductionLines.FindAll(element => element.WeekNr == weekNumber);
-
-        //    // calculate how many cycles we need to run in order to produce a productionLine and create a specific ProductionLineProductionCycle struct
-        //    // then add it to the list of structs for this week
-        //    int nrOfProductionCyclesNeeded = 0;
-        //    List<PLPCStruct> PLPCStructs = new List<PLPCStruct>();
-        //    foreach (ProductionLine productionLine in currentProductionLines)
-        //    {
-        //        ProductionCycle productionCycleRequired = allProductionCycles.Find(element => element.ProductProduced.Equals(productionLine.Product));
-
-        //        nrOfProductionCyclesNeeded = productionLine.Amount / productionCycleRequired.AmountOfProducts;
-
-        //        if ((double)productionLine.Amount % (double)productionCycleRequired.AmountOfProducts > 0)
-        //        {
-        //            nrOfProductionCyclesNeeded++;
-        //        }
-
-        //        PLPCStruct PLPCStruct = new PLPCStruct(productionCycleRequired, nrOfProductionCyclesNeeded);
-        //        PLPCStructs.Add(PLPCStruct);
-        //    }
-
-        //    // on every PLPCstruct simulate production in manner of asigning the successive tasks to specific machineSchedules
-        //    int i = 0;
-        //    foreach (PLPCStruct PLPCLine in PLPCStructs)
-        //    {
-        //        i++;
-        //        List<ProductionTask> successiveTasksForTank = PLPCLine.productionCycleNeeded.PCLRequired.FindAll(task => task.MachineTypeRequired == MachineType.Tank);
-        //        List<ProductionTask> successiveTasksForFilling = PLPCLine.productionCycleNeeded.PCLRequired.FindAll(task => task.MachineTypeRequired == MachineType.Filling);
-
-        //        List<MachineSchedule> tankMachinesSchedules = allMachineSchedules.FindAll(machineSchedule => machineSchedule.Machine.Type == MachineType.Tank);
-
-        //        List<MachineSchedule> fillingMachinesSchedules = allMachineSchedules.FindAll(machineSchedule => machineSchedule.Machine.Type == MachineType.Filling);
-
-        //        // finding a machine with a schedule with smallest duration
-        //        // first calculate the duration of the before assigned tasks, then assign them, somewhere? Dont ask me where we'll find out later I guess.
-        //        MachineSchedule leastBusyMachineSchedule = new MachineSchedule();
-        //        TimeSpan assignedTime = default(TimeSpan);
-        //        foreach (MachineSchedule item in tankMachinesSchedules)
-        //        {
-        //            foreach (ProductionTask productionTask in item.AssignedTasks)
-        //            {
-        //                //assignedTime = assignedTime + productionTask.Duration;
-        //                //if (assignedTime < leastBusyMachineSchedule.AssignedTasks.)
-        //                //{
-
-        //                //}
-
-        //            }
-        //        }
-
-        //    }
-
-
-        //}
-
-        //struct PLPCStruct
-        //{
-        //    public ProductionCycle productionCycleNeeded;
-        //    public int amountOfProductionCyclesNeeded;
-
-        //    public PLPCStruct(ProductionCycle pc, int amount)
-        //    {
-        //        productionCycleNeeded = pc;
-        //        amountOfProductionCyclesNeeded = amount;
-        //    }
-        //}
-
-        //ProductionLine productionLine = new ProductionLine();
-        //ProductionCycle productionCycle = new ProductionCycle();
     }
 }
 
